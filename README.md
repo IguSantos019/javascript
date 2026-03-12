@@ -1,2 +1,2 @@
 # javascript
-Curso de Javascript com Curso em v
+Curso de Javascript com Curso em vídeo
