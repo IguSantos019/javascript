@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript básico</title>
-    <link rel="stylesheet" href="estilo/aula01.css">
+    <link rel="stylesheet" href="estilos/aula01.css">
     <style>
         
     </style>
@@ -27,9 +27,9 @@
         <section>
             <h2>Váriaveis e tipos primitivos</h2>
             <h3>Váriaveis</h3>
-            <p>Para declarar uma váriavel temos a opção <strong>var</strong> ou <strong>let</strong>. Seguimos o exemplo:
+            <p> Uma váriavel nada mais é do que um <strong>espaço de locação na memória do computador</strong>. Para declarar uma váriavel temos a opção <strong>var</strong> ou <strong>let</strong>. Seguimos o exemplo:
             </p>
-                <code>
+                <code class="codigo">
                     <strong class="var">var</strong> <strong class="declaraçoes">n1</strong> = 5 <br>
                     <strong class="var">var</strong> <strong class="declaraçoes">n2</strong> = 8 <br>
                     ou <br>
@@ -68,6 +68,23 @@
         </section>
         <section>
             <h1>Tratamento de dados</h1>
+            <p>Para tratarmos os dados de uma váriavel é bem simples já que a própria váriavel já armazena o seu conteúdo, o que podemos fazer é usar esses dados apenas chamando essa variável, por exemplo: <br>
+                <code class="codigo">
+                    var n1 = window.prompt('Digite um número qualquer') <br>
+                    window.alert(n1)
+                </code>
+            <p>
+                Para fazermos uma soma por exemplo não é tão simples quanto 1 + 1 já que o sinal de + significa uma concatenação (juntar um com outro). Para isso precisamos declarar o número como o tipo <strong>number</strong>, vejamos o exemplo a seguir: <br>
+
+                <code class="codigo">
+                    var n1 = window.prompt('Digite um número qualquer') <br>
+                    var n2 = window.prompt ('Digite outro número') <br>
+                    var soma = Number(n1) + Number(n2) <br>
+                    window.alert(soma)
+                </code>
+            </p>
+
+            </p>
         </section>
     </main>
 </body>
