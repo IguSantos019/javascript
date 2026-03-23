@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04 Javascript</title>
+    <style>
+        body {
+            font: normal 1.7em Verdana;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Qual é o seu nome')
+        document.writeln(`Seu nome é ${nome} e tem ${nome.length} letras. <br>`)
+
+        document.write(`Seu nome em letras maiúsculas fica assim ${nome.toUpperCase ()}`)
+        document.write(`Seu nome em letras minúsculas fica assim ${nome.toLowerCase()}`)
+
+        var sal = Number(window.prompt('Quanto você recebe? (apenas números)'))
+        document.write(`Então seu salário é ${sal.toLocaleString('pt-BR',  {style:'currency', currency: "BRL"})}`)
+    </script>
+</body>
+</html>

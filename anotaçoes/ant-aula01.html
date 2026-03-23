@@ -14,7 +14,7 @@
         <h1>Aprendendo JavaScript</h1>
         <menu id="pags"> <!-- para próximas páginas-->
             Menu para próximas páginas e outras anotações
-            <div>
+        <div>
                 <ul>
                     <li><a href="#">página 01</a></li>
                     <li><a href="#">página 02</a></li>
@@ -130,6 +130,32 @@
                     Daria o mesmo resultado <br>
                     'Estou estudando JavaScript'
                 </code>
+                <h4>Formatações</h4>
+                <p>
+                    Formatação de String
+                    <ul>
+                        <li>n.leght</li>
+                            <ul><li>Conta quantas letras tem na palavra</li></ul>
+                        <li>n.toUpperCase()</li>
+                            <ul><li>Coloca todas as letras da palavra em maiúsculas</li></ul>
+                        <li>n.toLowerCase()</li>
+                            <ul><li>Coloca todas as letras da palavra em minúsculas</li></ul>
+                    </ul>
+                </p>
+                <p>
+                    Formatação de números
+                    <ul>
+                        <li>n.toFixed()</li>
+                            <ul><li>Indica quantas casas terá após a virgula ou ponto</li></ul>
+                    </ul>
+                    Códigos importantes
+                </p>
+                <code class="codigo">
+                    n.toFixed().Replace('.', ',')
+                </code>
+                Irá trocar o ponto pela vírgula <br>
+                <code class="codigo">
+                    n.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})</code>
         </section>
     </main>
 </body>
