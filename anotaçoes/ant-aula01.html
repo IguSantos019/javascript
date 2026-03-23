@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript básico</title>
-    <link rel="stylesheet" href="estilos/aula01.css">
+    <link rel="stylesheet" href="estilos/estilo-padrao.css">
     <style>
         
     </style>
@@ -75,16 +75,61 @@
                 </code>
             <p>
                 Para fazermos uma soma por exemplo não é tão simples quanto 1 + 1 já que o sinal de + significa uma concatenação (juntar um com outro). Para isso precisamos declarar o número como o tipo <strong>number</strong>, vejamos o exemplo a seguir: <br>
-
+            </p>
                 <code class="codigo">
                     var n1 = window.prompt('Digite um número qualquer') <br>
                     var n2 = window.prompt ('Digite outro número') <br>
-                    var soma = Number(n1) + Number(n2) <br>
+                    var soma = <strong>Number</strong>(n1) + <strong>Number</strong>(n2) <br>
                     window.alert(soma)
                 </code>
+                Para transformar uma string em um número temos algumas opções:
+                <ul>
+                    <li>Number.parseInt(n)
+                        <ul><li>Este é para números inteiros (5)</li></ul>
+                    <li>Number.parseFloat(n)</li>
+                        <ul><li>Este é para números com casas decimais (1,5)</li></ul>
+                    </li>
+                    <li>Number(n)</li>
+                        <ul><li>Modo simplificado, identifica valores reais ou inteiros</li></ul>
+                </ul>
             </p>
+                <code class="codigo">
+                    var n1 = <strong>Number.parseInt</strong>(window.prompt ('Digite um número')) <br>
 
+                    var n2 = <strong>Number.parseFloat</strong>(window.prompt ('Digite outro número')) <br>
+
+                    var n3 = <strong>Number</strong>(window.prompt ('Digite outro número'))
+                </code>
+            <p>
+                Podemos também transformar números em string
+                <ul>
+                    <li>String(<strong>n</strong>)</li>
+                    <li><strong>n</strong>.toString()</li>
+                </ul>
+                <code class="codigo">
+                    let n1 = Number(10) <br>
+                    let n2 = Number (20) <br>
+
+                    var soma = n1 + n2 <br>
+                    window.alert(soma.toString) <br>
+                    ou <br>
+                    window.alert(String(soma))
+                </code>
             </p>
+                Para usar algumas váriaveis com seus valores temos que fazer desta forma:
+                <code class="codigo">
+                    var s = 'JavaScript' <br>
+                    'Estou estudando ' + s <br>
+                    ficaria assim: 'Estou estudando JavaScript' <br>
+
+                    ou <br>
+
+                    temos a opção a seguir <br>
+
+                    'Estou estudando ${s}' <br>
+                    Daria o mesmo resultado <br>
+                    'Estou estudando JavaScript'
+                </code>
         </section>
     </main>
 </body>

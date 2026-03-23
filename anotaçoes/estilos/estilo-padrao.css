@@ -36,9 +36,10 @@ main ul > li {
 }
 code.codigo {
     display: block;
-    margin-left: 30px;
+    margin: 30px 20px;
     padding: 5px;
     font-size: 1.1em;
+    text-indent: 0;
 }
 strong.var {
     color: blue;
