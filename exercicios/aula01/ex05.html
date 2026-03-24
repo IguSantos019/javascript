@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo</title>
+    <style>
+        body {
+            background-color: rgb(125, 125, 244);
+            color: white;
+            font: 1.2em verdana;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1 name ="titulo-1">Estudos de DOM</h1>
+    <p>Aqui vai aparecer o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var corpo = document.body
+        var p1 = document.getElementsByTagName('p')[0]
+        var p2 = document.getElementsByTagName('p')[1]
+
+        p1.style.color = 'blue'
+        p2.style.color = 'Black'
+
+        window.document.write(p1.innerText)
+        document.write('<br>')
+        window.document.write(p2.innerHTML)
+        var negrito = document.getElementsByTagName('strong')[0]
+
+        negrito.style.color = "red"
+        negrito.style.fontSize = '1.5em'
+
+        var d1 = window.document.getElementById('msg')
+        d1.style.backgroundColor ='rgb(219, 97, 97)'
+
+        window.document.querySelector('div#msg').style.color = 'darkred'
+        window.document.querySelector('div#msg').style.padding = '10px'
+        
+    </script>
+</body>
+</html>
