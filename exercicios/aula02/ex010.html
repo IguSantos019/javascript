@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+
+        }
+        h1 {
+            font-weight: normal;
+
+        }
+        input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>Radar a frente (Max 80Km/h)</p>
+    <form action="">
+        <label for="vel">Qual a velocidade você passou?</label>
+        <br>
+        <input type="number" name="txtvel" id="txtvel">
+        <br>
+        <input type="button" id="botao" value="Verificar" onclick="calcular()">
+    </form>
+    <div id="resul"></div>
+    <script>
+        function calcular () {
+            var txtvel = document.getElementById('txtvel')
+            var resul = document.getElementById('resul')
+            var veln = Number(txtvel.value)
+            
+            resul.innerHTML = `Sua velocidade é de <strong>${veln} Km/h!</strong>`   
+            if (veln > 80) {
+                resul.innerHTML += `<p>Você foi <strong>MULTADO!</strong></p>`
+        } else {
+            resul.innerHTML += `<p>Você passou dentro dos limites, não irá ter multa! Boa viagem</p>`
+        }
+        }
+    
+
+        
+
+    </script>
+
+</body>
+</html>

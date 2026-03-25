@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aonde você mora?</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+
+        }
+        
+        label, input {
+            margin-top: 10px;
+        }
+        input#país {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aonde você mora?</h1>
+    <form action="" method="post">
+        <label for="país">Digite o país: </label>
+        <input type="text" name="país" id="país">
+        <br>
+        <label for="cidade">Digite a cidade: </label>
+        <input type="text" name="cidade" id="cidade">
+        <br>
+        <input type="button" value="Enviar" onclick="verificar()">
+    </form>
+    <div id="localizacao"></div>
+
+    <script>
+        function verificar(){
+            var país = document.getElementById('país')
+            var cidade = document.getElementById('cidade')
+            var localizacao = document.getElementById('localizacao')
+            localizacao.innerText = 'Você mora no ' + (país)
+
+            if (país == 'brasil') {
+                
+            }
+            
+
+
+        }
+
+
+    </script>
+</body>
+</html>
