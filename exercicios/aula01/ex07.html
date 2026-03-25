@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: brown;
+            color: black;
+
+        }
+        div{
+            width: 200px;
+            height: 230px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        input{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white;">Somando valores</h1>
+    <form action="">
+        <div>
+            <label for="textn1">Digite um primeiro número</label>
+            <input type="number" name="n1" id="textn1">
+            <br> 
+            <label for="textn2">+</label>
+            <input type="number" name="n2" id="textn2">
+            <input type="button" value="Somar" onclick="somar()">
+            <p id="resul">
+                Resultado
+            </p>
+        </div>
+        <script>
+
+            function somar(){
+                var tn1 = document.getElementById('textn1')
+                var tn2 = document.getElementById('textn2')
+                var resul = document.getElementById('resul')
+
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+
+                var s = n1 + n2
+                
+                resul.innerText = (`O resultado entre ${n1} e ${n2} é: ${s}`)
+                
+            }
+        </script>
+    </form>
+</body>
+</html>
