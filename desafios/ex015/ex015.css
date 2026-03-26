@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+body {
+
+}
+header > h1{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px 0px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.625);
+
+}
+main {
+    
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    height: 370px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.499);
+}
+main div#msg {
+    padding-top: 20px;
+    font-size: 1.4em;
+    text-shadow: 1px 1px 1px rgb(68, 129, 147);
+    text-decoration: underline;
+}
+img {
+   width: 250px;
+   height: 250px;
+   margin-top: 20px;
+   border-radius: 50%;
+   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.497);
+}
+
+footer {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.625);
+}
