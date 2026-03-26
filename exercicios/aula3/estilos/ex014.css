@@ -28,5 +28,26 @@ main {
     height: 400px;
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 2px 2px 3px black;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.534);
+}
+input {
+    margin-top: 15px;
+}
+input#botao {
+    width: 75px;
+    height: 40px;
+}
+input#anoNasc {
+    border: 1px solid black;
+    padding: 5px;
+}
+footer p{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.3em;
+    font-weight: normal;
+    font-style: italic;
+}
+div#resul {
+    margin-top: 15px;
 }

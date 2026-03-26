@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificador de idade e sexo</title>
     <link rel="stylesheet" href="estilos/ex014.css">
+    
 </head>
 <body>
+    
     <header>
         <h1>Verificador de idade</h1>
     </header>
     <main>
         <form action="" method="post">
             <label for="anoNasc">Ano de Nascimento:</label>
-            <input type="number" name="anonasc" id="anoNasc">
+            <input type="number" name="anonasc" id="anoNasc" max="2025">
             <br>
             <div>Sexo:
                 <label for="sexoMasc">Masculino - </label>
-                <input type="radio" name="sexoMasc" id="sexoMasc">
-                <label for="sexoFem">Feminino - </label>
-                <input type="radio" name="sexoFem" id="sexoFem">
+                <input type="radio" class="sexo" name="sexo" id="sexoMasc">
+                <label for="sexoFem">| Feminino - </label>
+                <input type="radio" class="sexo" name="sexo" id="sexoFem">
+                <br>
+                <input type="button" id="botao" value="Verificar" onclick="verificar()">
             </div>
-            
-            
         </form>
+        <div id="resul"></div>
     </main>
     <footer>
         <p>@cursoemvideo</p>
     </footer>
+    <script src="ex014.js"></script>
 </body>
 </html>
