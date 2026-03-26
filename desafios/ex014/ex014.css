@@ -25,7 +25,7 @@ main {
     background-color: white;
     color: black;
     width: 500px;
-    height: 400px;
+    height: 150px;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.534);
@@ -50,4 +50,5 @@ footer p{
 }
 div#resul {
     margin-top: 15px;
+    text-align: left;
 }
