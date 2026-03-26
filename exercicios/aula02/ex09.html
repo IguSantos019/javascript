@@ -28,24 +28,27 @@
         <label for="cidade">Digite a cidade: </label>
         <input type="text" name="cidade" id="cidade">
         <br>
-        <input type="button" value="Enviar" onclick="verificar()">
+        <input type="button" value="Enviar" onclick="verificarPaís()">
     </form>
     <div id="localizacao"></div>
 
     <script>
-        function verificar(){
             var país = document.getElementById('país')
             var cidade = document.getElementById('cidade')
             var localizacao = document.getElementById('localizacao')
-            localizacao.innerText = 'Você mora no ' + (país)
 
-            if (país == 'brasil') {
-                
+        function verificarPaís(){
+            if (país.value == `brasil`) {
+                localizacao.innerHTML = `<p>Você é brasileiro</p>`
+
+            } else {
+                localizacao.innerHTML = `Você é estrangeiro`
             }
+            localizacao.innerHTML += `E mora na cidade ${cidade.value}`
             
-
-
+            
         }
+
 
 
     </script>
