@@ -12,7 +12,7 @@ function verificar() {
     var gen = ''
     
     if (sexo[0].checked) {
-        gen = 'um homem'
+        gen = 'um homem' 
         
         if (idade >= 0 && idade <= 5) {
             img.setAttribute('src', 'imagens/bebe.jpg')
