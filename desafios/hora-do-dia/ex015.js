@@ -4,21 +4,23 @@ function carregar(){
     var hora = new Date().getHours()
     var min = new Date().getMinutes()
     var corpo = document.body
-    msg.innerHTML = `Agora são ${hora}:${min} do dia`
+    
 
     if (hora >= 0 && hora < 12) {
         foto.src = "imagens/foto-manha.jpg"
         corpo.style.backgroundColor = 'rgb(255, 188, 72)'
         msg.style.color = 'rgb(255, 188, 72)'
+        msg.style.backgroundColor = 'rgb(92, 68, 26)'
     }else if (hora >= 12 && hora < 18) {
         foto.src = "imagens/foto-tarde.jpg"
         corpo.style.backgroundColor = 'rgb(99, 190, 217)'
         msg.style.color = 'rgb(99, 190, 217)'
+        msg.style.backgroundColor = 'rgb(92, 68, 26)'
     }else {
         foto.src = "imagens/foto-noite.jpg"
         corpo.style.backgroundColor = 'rgb(0, 0, 58)'
     }
-    
+    msg.innerHTML = `Agora são ${hora}:${min}`
 }
 
 
