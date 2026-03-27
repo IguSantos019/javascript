@@ -15,23 +15,23 @@
     <main>
         <form action="" method="post">
             <label for="anoNasc">Ano de Nascimento:</label>
-            <input type="number" name="anonasc" id="anoNasc" max="2025" required>
+            <input type="number" name="anonasc" id="anoNasc">
             <br>
             <div>Sexo:
                 <label for="sexoMasc">Masculino - </label>
                 <input type="radio" class="sexo" name="sexo" id="sexoMasc">
+
                 <label for="sexoFem">| Feminino - </label>
                 <input type="radio" class="sexo" name="sexo" id="sexoFem">
                 <br>
+
                 <input type="button" id="botao" value="Verificar" onclick="verificar()">
             </div>
+            <div id="resul">
+                Preencha com os dados necessários
+        </div>
         </form>
-        <div id="resul">
-            Preencha com os dados necessários
-        </div>
-        <div>
-            <img id="imagem" src="imagens/" alt="">
-        </div>
+        
     </main>
     <footer>
         <p>@cursoemvideo</p>
