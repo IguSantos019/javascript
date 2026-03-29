@@ -4,4 +4,3 @@ num[5] = 2
 num.push(9)
 num.sort()
 console.log(`o valor é ${num} o array num tem atualmete ${num.length} índices`)
-
