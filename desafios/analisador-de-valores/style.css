@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 97vw;
+    height: 100vh;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 165), rgb(79, 79, 248));
+}
+header {
+    text-align: center;
+    margin: 30px 0;
+}
+main {
+    margin: auto;
+    color: black;
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.644);
+}
+footer {
+    text-align: center;
+    font-style: italic;
+}
+input {
+    margin-top: 10px;
+    padding: 3px;
+    width: 70px;
+}
+div#numerosAdc {
+    margin: auto;
+    text-align: left;
+
+    margin-top: 20px;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: ;
+    border: 1px dashed black;
+}
+footer {
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px black;
+    font-size: 1.2em;
+}
+button {
+    background-color: rgb(46, 46, 250);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.9em;
+}
+button:hover {
+    background-color: rgb(128, 128, 255);
+    transition: .5s;
+}
+button:active {
+    background-color: rgb(46, 46, 250);
+}
