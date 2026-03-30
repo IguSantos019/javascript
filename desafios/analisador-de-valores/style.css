@@ -38,12 +38,16 @@ div#numerosAdc {
     text-align: left;
 
     margin-top: 20px;
-    padding: 5px;
+    padding: 10px;
     width: 200px;
     border-radius: 5px;
-    background-color: ;
+    background-color: lightgray;
     border: 1px dashed black;
 }
+div#numerosAdc > p {
+    padding-bottom: 5px;
+}
+
 footer {
     margin-top: 10px;
     text-shadow: 1px 1px 3px black;
