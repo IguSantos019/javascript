@@ -2,10 +2,19 @@ let resul = document.getElementById('resul')
 
 function insert(num) {
     var numeros = num
-    resul.innerHTML += numeros
     num = Number(num)
-    console.log(typeof num)
-    console.log(``)
+    resul.innerHTML += numeros
+    console.log(numeros)
 }
+function limp() {
+    resul.innerHTML = ''
+    numeros = Number('')
+    console.log(numeros)
+}
+function apag(num){
 
+}
+function res(num) {
+    
+}
 
