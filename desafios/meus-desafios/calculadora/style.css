@@ -60,6 +60,9 @@ div > button#resultado {
     background-color: rgb(58, 191, 243); 
     color: white ;
 }
+#apagar {
+    width: 135px;
+}
 div > button#resultado:active {
     background-color: lightblue;
 }
