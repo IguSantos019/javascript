@@ -26,4 +26,26 @@ main {
     height: 100px;
     background-color: white;
     border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.71);
+}
+span#prgf {
+    margin-left: 70px;
+    font-size: 1.5em;
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+}
+button#botao {
+    margin: 15px 10px;
+    width: 100px;
+    height: 65px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+    font-size: 1.1em;
+}
+button#botao:active {
+    background-color: gray;
+    color: white;
 }
