@@ -53,3 +53,13 @@ div > button {
     color: black;
     border-radius: 8px;
 }
+div > button:active {
+    background-color: lightgray;
+}
+div > button#resultado {
+    background-color: rgb(58, 191, 243); 
+    color: white ;
+}
+div > button#resultado:active {
+    background-color: lightblue;
+}
