@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    background-image: linear-gradient(to bottom, purple, blue);
+}
+header {
+    margin: auto;
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: normal;
+    width: 400px;
+    margin-top: 20px;
+    color: white;
+}
+main {
+    margin: auto;
+    margin-top: 20px;
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+}
