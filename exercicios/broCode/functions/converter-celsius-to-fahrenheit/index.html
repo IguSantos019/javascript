@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de celsius e fahrenheit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Conversor de temperaturas</h1>
+    </header>
+    <main>
+        <h2>Converta qualquer grau abaixo:</h2>
+        <br>
+        <input type="number" name="txtgraus" id="txtgraus">
+        <hr>
+        <input type="radio" name="graus" id="radioBtnCtoF">
+        <label for="radioBtnCtoF">Celsius &rightarrow; Fahrenheit</label>
+        <br>
+        <input type="radio" name="graus" id="radioBtnFtoC">
+        <label for="radioBtnFtoC">Fahrenheit &rightarrow; Celsius</label>
+        <br>
+        <button type="submit" id="botao"  onclick="converter()">Enviar</button>
+        <p id="prgf">Converta!</p>
+    </main>
+    <footer>
+        <p>@BroCode</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
