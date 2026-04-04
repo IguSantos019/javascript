@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    background-image: linear-gradient(to bottom, purple, blue);
+}
+header {
+    margin: auto;
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: normal;
+    width: 400px;
+    margin-top: 20px;
+    color: white;
+}
+main {
+    margin: auto;
+    margin-top: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.71);
+    padding: 10px;
+}
+label#labeltxtgraus{
+    display: block;
+    text-align: center;
+    font-size: 1.9em;
+}
+input#txtgraus {
+    display: block;
+    margin: auto;
+    padding: 15px;
+    font-size: 1.3em;
+    text-align: center;
+    width: 150px;
+}
+input[type = 'radio']{
+    width: 15px;
+    height: 15px;
+    margin-bottom: 10px;
+}
+
+#botao {
+    display: block;
+    margin: auto;
+    width: 70px;
+    height: 50px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+#botao:active {
+    background-color: gray;
+    color: white;
+}
+p{
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+    border-radius: 10px;
+}
