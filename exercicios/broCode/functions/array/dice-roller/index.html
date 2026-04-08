@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolador de dados aleatório</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Rolador de dados aleatório</h1>
+
+    </header>
+    <main>
+        <label for="dadosNum">Quantidade de dados  &rightarrow;</label>
+        <input type="number" name="dadostxt" id="dadostxt">
+        <button id="adc" class="adc-ou-sub">+</button>
+        <button id="sub" class="adc-ou-sub">-</button>
+        <button type="submit" id="botao" onclick="jogarDados()">Jogar</button>
+        <p id="result">Aqui está o resultado</p>
+        <div id="result-img"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
