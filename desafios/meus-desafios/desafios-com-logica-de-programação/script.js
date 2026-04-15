@@ -97,6 +97,8 @@ console.log(result)
 
 */
 
+//exercicio de pontos e velocidades de ruas
+/*
 function radar60km(speed){
     const limitSpeed = 60
     const kmPerPoint = 5
@@ -118,3 +120,46 @@ function radar60km(speed){
     }
 }
 radar60km(90)
+
+*/
+
+//função que verifica quantas strings tem em um array
+/*
+const stringsArray = ['igu', 2, true, 'silva', false, 'Tainara']
+console.log(stringsArray)
+
+function howManyStrings(stringsArray){
+    let contStrings = 0;
+
+    for(let strings of stringsArray)
+        if(typeof strings === 'string'){
+            contStrings++
+            
+        }
+    return contStrings
+    
+   
+}
+let result = howManyStrings(stringsArray)
+console.log(result)
+*/
+
+const countries = {
+    name: 'Japan',
+    population: 125,
+    capital: 'Tokyo',
+    economyPosition: 3
+}
+/*
+for(let strings in countries)
+    console.log(strings, countries[strings])*/
+
+
+function showOnlyStrings(obj){
+    for(let strings in obj)
+        if(typeof obj[strings] === 'string'){
+            console.log(strings, obj[strings])
+        }
+        
+}
+showOnlyStrings(countries)
