@@ -1,0 +1,120 @@
+
+// função para saber qual é o maior número
+/*
+function maiorNum(n1, n2){
+    
+    
+    let maior = n1 + n2
+    maior = Math.max(n1, n2)
+    return maior
+}
+let maiorNumero = maiorNum(9, 27)
+console.log(maiorNumero)
+
+*/
+
+// função que diz se uma "foto" é maior verticalmente ou horizontalmente
+/*
+function EstaHorizontal(altura, largura){
+    if(altura === largura) return 'A foto tem o mesmo tamanho horizontalmente e verticalmente'
+    if (altura > largura) return 'A foto é verticalmente maior'
+    else return 'A foto é horizontalmente maior'
+    
+}
+var altura = 250
+var largura = 250
+let horiOuVert = EstaHorizontal(altura, largura)
+console.log(`${horiOuVert}, a altura da imagem é ${altura}px e a largura é ${largura}px.`)
+*/
+
+// fução que verifica se um número é impar ou par
+/*
+function imparOupar(number){
+    if (number % 2 == 0) return `O ${number} é par!`
+    else return `O número ${number} é impar!`
+}
+let result = imparOupar(8)
+
+console.log(result)
+
+*/
+
+// verificação se o número é divisivel por 3 ou e por 5
+/*
+function fizzBuzz(number){
+    if (typeof number !== 'number') return 'Este valor é inválido!'
+    if (number % 3 == 0 && number % 5 == 0) return 'FizzBuzz'
+    if(number % 3 == 0) return 'Fizz'
+    if (number % 5 == 0) return 'Buzz'
+    return number 
+}
+
+let result = fizzBuzz(7)
+console.log(result)
+*/
+
+// Apelidos para cada quantidade de tacadas necessárias para acertar no golf
+/*
+const apelidos = [
+    'Hole-in-one',
+    'Eagle',
+    'Birdie',
+    'Par',
+    'Bogey',
+    'Double Bogey',
+    'Go home'
+]
+
+function golfScore(par, strokes){
+    if (strokes === 1 ) return apelidos[0]
+    if(strokes <= par -2) return apelidos[1]
+    if(strokes <= par -1) return apelidos[2]
+    if(strokes === par) return apelidos[3]
+    if(strokes === par + 1) return apelidos[4]
+    if(strokes === par + 2) return apelidos[5]
+    if(strokes >= par + 3) return apelidos[6]
+    
+}
+
+let result = golfScore(4, 8)
+console.log(result)
+*/
+
+/*
+function radar60km(speed){
+    
+    if(speed === 60) return `A sua velocidade é de ${speed}km/h, está dentro do limite`
+    if (speed === 65) return `Você está na tolerância do limite (65km/h)`
+    if(speed >= 66 & speed <= 70) return `Você ganhou 1 ponto na carteira`
+    if(speed >= 71 & speed <= 75) return `Você ganhou 2 pontos na carteira`
+    if(speed >= 76 & speed <= 80) return `Você ganhou 3 pontos na carteira`
+    if(speed >= 71 & speed <= 85) return `Você ganhou 4 pontos na carteira`
+    if(speed >= 86 & speed <= 90 ) return `Você ganhou 5 pontos na carteira`
+    if(speed >= 91) return `CNH SUSPENSA!`
+}
+let result = radar60km(65)
+console.log(result)
+
+*/
+
+function radar60km(speed){
+    const limitSpeed = 60
+    const kmPerPoint = 5
+    if(speed <= limitSpeed) {
+        console.log(`A sua velocidade é de ${speed}km/h, está dentro do limite`)
+    }else if (speed == limitSpeed + kmPerPoint){
+        console.log(`Você está na tolerância do limite (65km/h)`)
+    }else{
+        let points = Math.floor((speed - limitSpeed) / kmPerPoint - 0.1)
+        
+        if(points > 5){
+        console.log('CNH SUSPENSA!')
+        }
+            if (points == 1 ){
+                console.log('Point: ' + points)
+            }else {
+                console.log('Points: ' + points)
+            }
+    }
+}
+radar60km(90)
