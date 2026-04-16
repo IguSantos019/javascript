@@ -144,16 +144,17 @@ let result = howManyStrings(stringsArray)
 console.log(result)
 */
 
+//função com for loop in
+/*
 const countries = {
     name: 'Japan',
     population: 125,
     capital: 'Tokyo',
     economyPosition: 3
 }
-/*
-for(let strings in countries)
-    console.log(strings, countries[strings])*/
 
+//for(let strings in countries)
+   // console.log(strings, countries[strings
 
 function showOnlyStrings(obj){
     for(let strings in obj)
@@ -163,3 +164,84 @@ function showOnlyStrings(obj){
         
 }
 showOnlyStrings(countries)
+*/
+    
+//soma dos multiplos de 3 e 5
+/*
+function somaMultiplos(limitNum){
+    let sum = 0
+    for(let c = 0; c <= limitNum; c++){
+        if(c % 3 == 0 || c % 5 == 0){
+            sum += c
+        }
+        
+    }
+    return sum
+
+}
+console.log(somaMultiplos(10))
+*/
+
+/*
+const marks = [50, 75, 100]
+
+function calculateAverage(array){
+    let sumNotes = 0
+    for(let note of array)
+        sumNotes += note
+    return sumNotes / array.length
+}
+function calculateGrade(array){
+    const average = calculateAverage(array)
+
+    if(average < 60) return 'E'
+    if(average < 70) return 'D'
+    if(average < 80) return 'C'
+    if(average < 90) return 'B'
+    return 'A'
+        
+}
+
+console.log(calculateGrade(marks))
+*/
+
+//nexted loop com estrelas
+/*
+function showStars(rows){
+    
+    for(let c = 1; c <= rows; c++){
+        let asteristico = '';
+        for(let i = 0; i < c; i++)
+            asteristico += '*'
+            console.log(asteristico)
+    }
+
+}
+showStars(5)
+
+function showStars(rows){
+    let asteristico = ''
+    for(let c = 1; c <= rows; c++){
+        asteristico += '*'
+        console.log(asteristico)
+    }
+}
+
+*/
+
+
+const arr = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
+
+
+
+function multipleAll(arr){
+    let result = 1;
+    
+    for(let c = 0; c < arr.length; c++){
+        for(let i = 0; i < arr[c].length; i++){
+            result *= arr[c][i];
+        }
+    }
+    return result;
+}
+console.log(multipleAll(arr))
