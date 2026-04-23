@@ -3,7 +3,6 @@
 
 // fatiamento de string = criar uma substring a partir de uma parte de outra string
 
-/*
     const nomeEsobrenome = 'Igor Silva'
 
     let primeiroNome = nomeEsobrenome.slice(0, 4)
@@ -16,12 +15,11 @@
     console.log(sobrenome)
     console.log(primeiraLetra)
     console.log(ultimaLetra) 
-*/
-
+/*
 const nomeCompleto = "Igor Silva Santos"
 console.log(nomeCompleto)
 console.log(" ")
-
+let nome = nomeCompleto
 
 let nome = nomeCompleto.slice(0, nomeCompleto.indexOf(" "))
 let sobrenome = nomeCompleto.slice(nomeCompleto.indexOf(" ") + 1, nomeCompleto.lastIndexOf(" "))
@@ -43,3 +41,4 @@ let extensao = email.slice(email.indexOf("@"))
 
 console.log(username)
 console.log(extensao)
+*/
