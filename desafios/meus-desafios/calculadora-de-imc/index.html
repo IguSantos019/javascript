@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(128, 193, 255);
+            border-radius: 10px;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.548);
+        }
+        main > h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            padding: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.356);
+        }
+        main hr{
+            border: 2px solid black;
+        }
+        #inpAndlabelDiv{
+            text-align: center;
+            
+        }
+        label, input{
+            margin: auto;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        label{
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.678);
+        }
+        input{
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 0.5px solid black;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.548);
+            margin-left: 5px;
+        }
+        input#pesoNum{
+            margin-left: 13px;
+        }
+        button#calculateButton{
+            height: 50px;
+            width: 100px;
+            display: block;
+            margin: auto;
+            font-size: 1.2em;
+            background-color: darkblue;
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            margin-top: -10px;
+        }
+        button#calculateButton:hover{
+            background-color: rgb(21, 95, 255);
+        }
+        div#resultIMC{
+            width: 270px;
+            padding: 10px;
+            text-align: center;
+            line-height: 30px;
+            margin: auto;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            font-size: 1.3em;
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Calculadora IMC</h1>
+        <hr>
+        <br>
+        <div id="inpAndlabelDiv">
+            <label for="nametxt">Nome: </label>
+            <input type="text" name="name" id="nametxt" autocomplete="name"> <br>
+            <label for="pesoNum">Peso: </label>
+            <input type="number" name="peso" id="pesoNum"> <br>
+            <label for="alturaNum">Altura: </label>
+            <input type="number" name="alturaNum" id="alturaNum" value="1">
+        </div>
+        <br>
+        <button type="submit" id="calculateButton" onclick="showIMC()">Calcular</button>
+        <div id="resultIMC">Calcule para saber seu IMC</div>
+    </main>
+
+
+
+    <script>
+        let resultIMC = document.getElementById('resultIMC')
+
+        function showIMC(){
+            let nametxt = document.getElementById('nametxt').value
+            let pesoNum = document.getElementById('pesoNum').value
+            let alturaNum = document.getElementById('alturaNum').value
+
+            nametxt = nametxt.trim().slice(0, 1).toUpperCase() + nametxt.slice(1).toLowerCase()
+            
+            if(nametxt === ''){
+                alert('Por favor insira o seu nome')
+            }else if(pesoNum == ''){
+                alert('Por favor insira seu peso')
+            }else if(alturaNum == ''){
+                alert('Por favor insira sua altura')
+            }else{
+                resultIMC.style.width = '280px';
+                resultIMC.style.fontFamily = 'Arial, Helvetica, sans-serif'
+                resultIMC.innerHTML = `Olá <strong>${nametxt}</strong> ${calculateIMC(pesoNum, alturaNum)}`
+            }
+
+
+            
+            
+        }
+
+        function calculateIMC(peso, altura){
+            let imcResult = peso / (altura * 2)
+            imcResult = imcResult.toFixed(2)
+
+            if(imcResult < 18.5) return `seu <em>IMC</em> é ${imcResult} e você está <strong>abaixo do peso!</strong>`
+            if(imcResult < 24.9) return `Seu <em>IMC</em> é ${imcResult} e você está com o <strong>peso normal!</strong>`
+            if(imcResult < 29.9) return `Seu <em>IMC</em> é ${imcResult} e você está com <strong>sobrepeso!</strong>`
+            if(imcResult < 34.9) return `Seu <em>IMC</em> é ${imcResult} e você está com <strong>obesidade grau 1</strong>`
+            if(imcResult < 39.9) return `Seu <em>IMC</em> é ${imcResult} e você está com <strong>obesidade grau 2!</strong>`
+            if(imcResult >= 40.0) return `Seu <em>IMC</em> é ${imcResult} e você está com <strong>obesidade grau 3!</strong>`
+            return imcResult
+        }
+        function conditionsToIMC(name){
+            
+        }
+        
+    </script>
+</body>
+</html>
