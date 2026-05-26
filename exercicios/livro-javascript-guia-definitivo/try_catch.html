@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function fatorial(x){
+                if(x < 0) throw alert('x must not be negative');
+            console.log(typeof(n))
+            var res = 1;
+            for(i = 2; i <= x; i++){
+                res *= i;
+            }
+            return res;
+        }
+        var n = Number(window.prompt('Digite um número para ver o seu fatorial'))
+        while(Number.isNaN(n)){
+            alert('Isso não é um número')
+            var n = Number(window.prompt('Digite um número para ver o seu fatorial'))
+        }
+        var r = fatorial(n)
+        
+        if(n >= 171){
+            alert(n + '! = ' + r + ': Apartir do número 171 o resultado do fatorial é Infinito!')
+        }else{
+            alert(n + '! = ' + r)
+        }
+        /*
+        function fatorial(x){
+            if(x < 0) throw new Error('x must not be negative');
+            console.log(typeof(n))
+            var res = 1;
+            for(i = 2; i <= x; i++){
+                res *= i;
+            }
+            return res;
+        }
+        try{
+            var n = Number(prompt('Por favor insira um número positivo: ', ' '))
+            var f = fatorial(n)
+            
+            alert(n + '! = ' + f)
+        }
+        catch (ex){
+            if(typeof(n) == "string"){
+                throw new Error('O número não pode ser uma letra')
+            }
+            
+        }*/
+    </script>
+</body>
+</html>
