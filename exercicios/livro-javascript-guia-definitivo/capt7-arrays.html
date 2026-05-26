@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7 - Arrays</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+
+        var a = [[1, {x:1, y:2}, 2, {z:3}], ["Thomas", "Shelby"]]
+        console.log(a[0].length)
+        var ar = new Array(1);        
+        console.log(ar);
+        ar[0] = 0
+        ar.push(1, 2, 3, 4, 5);//adiciona um elemento no array, aumentando o índice;
+        console.log(ar);
+        ar.pop()// tira o ultimo elemento do array
+        console.log(ar)
+        ar.shift()// tira o primeiro elemento do array
+        console.log(ar)
+        ar.unshift()
+        console.log(ar)
+        ar.splice(2, 2)
+        console.log(ar)
+
+        var o = {name: "Thomas Shelby", age: Number(33)};        
+        var keys = Object.keys(o);
+        var values = [];
+        for(var i = 0; i < keys.length; i++){
+            var key = keys[i];
+            values[i] = o[key];
+        }
+        values.push("null", undefined)
+        for(var i = 0; i < values.length; i++){
+            if(!values[i]) continue;
+            console.log(values[i])
+        }
+
+    </script>
+</body>
+</html>

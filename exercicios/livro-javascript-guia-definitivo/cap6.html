@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6 - Objetos</title>
+</head>
+<body>
+    
+
+
+    <script>
+        class Retangulo{
+            constructor(width, height){
+                this.width = width;
+                this.height = height;
+
+            }
+
+            set width(newWidth){
+                if(newWidth > 0){
+                    this._width = newWidth;
+                }else{
+                    console.error('A largura tem que ser um número e maior que zero!')
+                }
+            }
+            get width(){
+                return this._width;
+            }
+            set height(newHeight){
+                if(newHeight > 0){
+                    this._height = newHeight;
+                }else{
+                    console.error("A altura tem que ser um número e maior que zero!")
+                }
+                
+            }
+            get height(){
+                return this._height;
+            }
+        }
+
+        var retangulo = new Retangulo(5, 8)
+
+
+        console.log(retangulo)
+        console.log(retangulo.width)
+        console.log(retangulo.height)
+        console.log(typeof(retangulo.height))
+
+
+        //pag 129
+
+        var o = {};
+        Object.defineProperty(o, "x", {
+            value: 1,
+            writable: false,
+            enumerable: true,
+            configurable: true,
+        })
+        Object.defineProperty(o, "y", {
+            value: 2,
+            writable: true,
+            enumerable: true,
+            configurable: true
+        })
+        Object.defineProperty(o, "x", {writable: false})
+        o.x = 5 // funciona apenas se o writable for true
+        Object.defineProperty(o, "x", {value: 5})//funciona quando apenas o configurable é true.
+        console.log(o)
+        Object.defineProperty(o, "y", {get: function(){return 0;}})
+        console.log(o ,o.y)
+
+        var p = Object.defineProperties({}, {
+            x: {value: 7, writable: true, enumerable: true, configurable: true},
+            y: {value: 7, writable: true, enumerable: true, configurable: true},
+            r: {
+                get: function(){return Math.sqrt(this.x*this.x + this.y*this.y).toFixed(3)}
+            } 
+        })
+        console.log(p)
+
+        var animal = {
+            speak: function(){console.log(`${this.sound}!`)}
+        };
+        const dog = Object.create(animal)
+        dog.sound = "Au Au";
+        dog.speak()
+        const cat = Object.create(animal);
+        cat.sound = "Meau";
+        cat.speak();
+
+
+        const person = {
+            firstname: "",
+            age: Number()
+        };
+        const homem1 = Object.create(person);
+        homem1.firstname = "Igor";
+        homem1.age = 22;
+
+        console.log(homem1)
+        const homem2 = Object.create(person);
+        homem2.firstname = "Leonardo";
+        homem2.age = 28;
+
+        const mulher1 = Object.create(person);
+        mulher1.firstname = "Tainara";
+        mulher1.age = 22;
+
+        console.log(homem2)
+
+        console.log(homem1, mulher1)
+
+
+
+        //var foo = {};
+        //foo.prototype = Array;
+
+        let bar = {name: "Jhonn", age: 21};
+
+        /*for(prop in bar){
+            foo[prop] = bar[prop]
+        };*/
+        //console.log(foo)
+        console.log(bar)
+
+        let foo = Object.create(Object, {name: {value: "Jhonn"}, age: {value: 32}} );
+
+        const ob = Object.assign(Object.create(null), {
+            state: "São Paulo",
+            city: "São Paulo"
+        })
+        console.log(ob)
+
+        const ab = {shopping: "JK Iguatemi", totalPisos: 3}
+        console.log(ab)
+        var a = ["fruta1", "fruta2"]
+        console.log(a, typeof(a))
+
+
+        class Animal{
+            constructor(name, type){
+            }
+        }
+        const gato = new Animal({type: "Mamífero"});
+        gato.name = "gato"; gato.type = "Mamífero"
+
+        const cachorro = new Animal();
+        cachorro.type = "Mamífero";
+        console.log(gato, cachorro)
+
+        var o1 = Object.create({num: 2});
+        o1 = {x: 1};
+        Object.defineProperty(o1, "z", {value: 3});
+        console.log(o1.propertyIsEnumerable("z"));
+
+        var obj = new Object({firstname: "Thomas", sobrenome: "Shelby"});
+        for(var props in obj){
+            if(!obj.hasOwnProperty) continue;
+            else console.log(props)
+        }
+        console.log(obj);
+
+        var obBlock = Object.seal(Object.create(Object.freeze({x:1}), {y: {value:2, writable: true}}));
+        obBlock.x = 5;
+        console.log(obBlock.x);
+
+        o = {x:1, y:{z:[false, null, ""]}};
+        console.log(o);
+        var s = JSON.stringify(o);
+        console.log(s);//s.x = undefined
+        p = JSON.parse(s);
+        console.log(p.x)//p.x = 1
+
+        var ar = ["banana", " maça"].toString();
+        console.log(d)
+        var d = new Date(22-10-2025).toLocaleString()
+        console.log(d)
+
+        var teste = {name: "Thomas", surname: "Shelby", age: 33, profission: "Author"}
+        console.log(teste)
+        console.log(Object.keys(teste))//retorna apenas o nome sem o valor dos elementos
+        console.log(Object.values(teste))//retorna os valores dos elementos sem o nome
+    </script>
+</body>
+</html>
