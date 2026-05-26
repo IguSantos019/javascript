@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.GetOwnPropertyDescriptor</title>
+</head>
+<body>
+    
+
+
+    <script>
+        var names = {name1: "Jhonn", name2: "Shelby", name3: "Thomas"}
+
+        var desc = Object.getOwnPropertyDescriptors(names, "name1")
+        Object.defineProperty(names, "name1", {configurable: false, enumerable: false, writable: false, value: 123});
+
+        console.log(desc)
+        console.log(names.name1)
+
+
+        var o = new Object({x: 1})
+        console.log(o)
+        o = Object.prototype;
+        console.log(o)
+
+        var random = {
+            get octet(){return Math.floor(Math.random()* 256);},
+            get uint16(){return Math.floor(Math.random()*65536);},
+            get int16(){return Math.floor(Math.random()*65536) -32768;}
+        }
+
+        console.log(random.octet)
+
+        var o = {
+            data_prop: 5,
+            get accessor_prop(){return this.data_prop* this.data_prop},
+            set accessor_prop(value){ return this.value}
+        }
+
+        var serialNum = {
+            $n: 0,
+            get next(){return this.$n++},
+            set next(n){
+                if(n >= this.$n) this.$n = n
+                else console.error("Otario")
+            }
+        }
+        var p = {x:1};
+        var obj = {};
+        console.log(p, o);
+        console.log(o.x, p.x);
+        console.log(p.isPrototypeOf(o));
+        console.log(Object.prototype.isPrototypeOf(p));
+        if(p instanceof Object){console.log('p é um Objeto')};
+
+        function classof(objeto){
+            if(obj == null) console.log("Null") ;
+            if(obj === undefined) console.log("Undefined") ;
+            return console.log(Object.prototype.toString.call(obj).slice(8,-1));
+        }
+    console.log(classof(false))
+
+
+    console.log("Eu sou um merda")
+    </script>
+</body>
+</html>
