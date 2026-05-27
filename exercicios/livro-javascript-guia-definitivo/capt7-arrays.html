@@ -31,16 +31,162 @@
         var o = {name: "Thomas Shelby", age: Number(33)};        
         var keys = Object.keys(o);
         var values = [];
+        //iteração com loop for
         for(var i = 0; i < keys.length; i++){
             var key = keys[i];
             values[i] = o[key];
         }
-        values.push("null", undefined)
+        values.push(null, undefined)
         for(var i = 0; i < values.length; i++){
             if(!values[i]) continue;
             console.log(values[i])
         }
+        //iteração com loop for..in em arrays esparsos
+        var sparceArr = new Array(5);
+        for(var i = 0; i < sparceArr.length; i++){
+            sparceArr[i] = "Value: " + (i + Number(1))
+        }
+        
+        for(var index in sparceArr){
+            var value = sparceArr[index];
+            console.log(index + ": " + value)
+        }
 
+        //Iteração com método for.Each()
+        var data = [1, 2, 3, 4, 5];
+        var sumOfSquares = 0;
+        data.forEach(function(x){
+            sumOfSquares += x*x;
+        })
+        console.log(sumOfSquares)
+
+        var frutas = ["banana", "maça", "pera", "laranja"];
+        var frutasArr = "";
+        frutas.forEach((frutas, indice) => {
+            console.log(`${indice + 1} : ${frutas}`)
+        })
+
+        //Array multidimensional - tabuada
+
+        var table = new Array(11);
+        for(var i = 0; i < table.length; i++){
+            table[i] = new Array(11);
+        }
+        
+        //inicializa o array
+        for(var row = 0; row < table.length; row++){
+            for(col = 0; col < table[row].length; col++){
+                table[row][col] = row*col;
+            }
+        }
+        //usa o array multidimensional para calcular 5*7
+        var product = table[8][8];
+        console.log(table)
+        console.log(product);
+
+        //outro exemplo
+        let rows = 3
+        let cols = 2
+        let arry = new Array(rows)
+        for(var i = 0; i < rows; i++){
+            arry[i] = new Array(cols)
+            
+        }
+        for(var j; j < arry.length; j++){
+            arry[j].push = j
+        }
+        console.log(arry)
+
+        //Método .join em arrays - converte como se fosse em toString(), mas voce escolhe como ele é separado, virgula, espaço, traço etc.
+        function arrJoin(){
+            console.log("Join()");
+            var a = [1, 2, 3];
+            console.log(a);
+            console.log(a.join());
+            console.log(a.join(" "));
+            console.log(a.join(""));
+            var b = new Array(10);
+            console.log(b.join("-") + " 10 elementos automáticos com .join()")
+        }
+        arrJoin();
+
+        //Método .reverse() - inverte o array
+        function arrRev(){
+            console.log("Reverse()");
+            var a = [1, 2, 3];
+            console.log(a.reverse(), a.join(" "));
+        }
+        arrRev();
+        //Método .sort() - coloca o array em ordem númerica ou alfabética
+        function arrSort(){
+            console.log("Sort()");
+            var a = ["banana", "maça", "laranja"];
+            console.log(a.sort(), a.join(", "));
+            var b = [9, 8, 7, 1, 4, 5];
+            console.log(b.sort(), b.join(", "));
+
+            var c = [33, 4, 1111, 222];
+            console.log(c.sort());
+            //para fazer em ordem númerica as vezes temos que fazer uma função - function(a,b){return a - b} para inverter é return b - a 
+            var r = c.sort(function(a,b){return a - b})
+            console.log(r)
+        }
+        arrSort()
+        //Método .concat() - cria e retorna um novo array contendo os elementos do array original - clona o array e possibilita adicionar novos elementos.
+        function arrConcat(){
+            console.log("Concat()");
+            var a = [1, 2, 3];
+            var b = a.concat();
+            console.log(a);
+            console.log(b);
+        }
+        arrConcat()
+        //Método .slice() - Recorta o array com os parâmetros passados, números negativos são contados de trás para frente;
+        function arrSlice(){
+            console.log("Slice()");
+            var a = [1, 2, 3, 4, 5];
+            console.log(a)
+            var r = a.slice(0, 3);
+            console.log(r);
+            var s = a.slice(-1);
+            console.log(s)
+        }
+        arrSlice();
+        //Método .splice(indiceInicial, Qtd. a deletar, adc. novos elementos) - splice é um método que pode deletar, ou adcionar, ou fazer ambos ao mesmo tempo.
+        function arrSplice(){
+            console.log("Splice()")
+            var frutas = ["banana", "maça", "laranja", "manga"];
+            console.log(frutas);
+            frutas.splice(4, 0, "Morango");
+            console.log(frutas);
+            var frutas2 = frutas.concat();
+            frutas2.splice(0, 3, "Uva");
+            console.log(frutas2)
+        }
+        arrSplice();
+        //Método push() - adicona um ou mais elementos no final do array
+        //Método pop() - remove o ultimo elemento do array e pode retornar esse elemento em outro array
+        function arrPushPop(){
+            console.log("Push() e Pop()")
+            var stack = [];
+            stack.push(1,2);
+            console.log(stack);
+            stack.pop();
+            console.log(stack, stack.length);
+            stack.push(3);
+            console.log(stack)
+            //Outro exemplo
+            console.log("Outro exemplo");
+            var f = ["maça", "banana", "laranja"];
+            console.log(f)
+            var UltimaF = f.pop()
+            console.log(UltimaF)
+            f.push("Morango");
+            console.log(f)
+            UltimaF += ", " + f.pop();
+            console.log(UltimaF)
+        }   
+        arrPushPop();
     </script>
 </body>
 </html>
