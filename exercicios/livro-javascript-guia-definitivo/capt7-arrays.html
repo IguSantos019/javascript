@@ -97,6 +97,8 @@
         }
         console.log(arry)
 
+        //Métodos ECMAScript 3
+
         //Método .join em arrays - converte como se fosse em toString(), mas voce escolhe como ele é separado, virgula, espaço, traço etc.
         function arrJoin(){
             console.log("Join()");
@@ -187,6 +189,29 @@
             console.log(UltimaF)
         }   
         arrPushPop();
+
+        function arrUnshiftShift(){
+            console.log("Shift() e unshift()")
+            var a = [3, 4, 5];
+            console.log(a);
+            a.unshift(0, 1, 2);
+            console.log(a);
+            a.shift();
+            console.log(a)
+
+        }
+        arrUnshiftShift()
+
+        function toStringETolocale(){
+            console.log("toString()");
+            var a = [1, 2, 3];
+            console.log(a.toString());
+            //toLocaleString()
+
+            console.log(a)
+            console.log(a.toLocaleString())
+        }
+        toStringETolocale()
     </script>
 </body>
 </html>

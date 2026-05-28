@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capt. 7 - Arrays 2</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+        //Métodos de array ECMAScript 5 
+
+        //Sintaxe
+        //var a = [1, 2, 3];
+        //a.forEach(function(parametro1, parametro2, parametro3){return função})
+        //paramentro1: valor de cada elemento
+        //parametro2: indice de cada elemento, começando com 0
+        //parametro3: array em si
+        //todos os parametros são opcinais
+
+        function forEach1(){
+            var nums = [10, 20, 30];
+            var sum = 0;
+            nums.forEach(function(num){
+                sum += num
+                console.log(num)
+            })
+        console.log(sum)
+        }
+        forEach1()
+
+        /*
+        //Para parar o laço forEach
+        var a = [1, 2, 3, 4];
+        function foreach(a, f, t){
+            
+            try{
+                a.forEach(f,t);
+            }
+            catch (e){
+                if(e === foreach.break) return;
+                else throw e;
+            }
+        }
+        foreach(a)
+        */
+
+        function exForEach1(){
+            var a = [1, 2, 3];
+            a.forEach((valorArray, IndiceArray, ArrayEmSi) => {console.log(valorArray, IndiceArray, ArrayEmSi)})
+        }
+        exForEach1();
+
+        function exForEach2(){
+            var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+            numbers.forEach(function(num){
+                if(num % 2 == 0){console.log(num, "PAR!")}
+                else{console.log(num, "IMPAR!")}
+            })
+        }
+        exForEach2();
+
+        function exForEach3(){
+            const numbers = [1, 2, 3];
+            let result = 0;
+            numbers.forEach(function(number){result += number})
+            console.log(result)
+
+            //Uma forma de fazer o forEach é passando os parametros por variável;
+            const numeros = [1, 2, 3];
+            let res = 0;
+            var soma = function(number){res += number}
+            numeros.forEach(soma)
+            console.log(res)
+        
+        }
+        exForEach3();
+
+        //Encapsulando o forEach em uma função que é passada para uma variável onde é chamada pelo array fora da função.
+        const numbers = [10, 10];
+
+        const sumForEach = function(numbers) {
+            let result = 0;
+            numbers.forEach(function(number){result += number})
+            return result;
+        }   
+        console.log(sumForEach(numbers))
+        console.log(sumForEach([5, 5]));
+        log
+
+    </script>
+</body>
+</html>
