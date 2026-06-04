@@ -13,22 +13,22 @@
 
 
         var a = [[1, {x:1, y:2}, 2, {z:3}], ["Thomas", "Shelby"]]
-        console.log(a[0].length)
+        //console.log(a[0].length)
         var ar = new Array(1);        
-        console.log(ar);
+        //console.log(ar);
         ar[0] = 0
         ar.push(1, 2, 3, 4, 5);//adiciona um elemento no array, aumentando o índice;
-        console.log(ar);
+        //console.log(ar);
         ar.pop()// tira o ultimo elemento do array
-        console.log(ar)
+        //console.log(ar)
         ar.shift()// tira o primeiro elemento do array
-        console.log(ar)
-        ar.unshift()
-        console.log(ar)
-        ar.splice(2, 2)
+        //console.log(ar)
+        ar.unshift()//adiciona elementos ao primeiro index
+        //console.log(ar)
+        ar.splice(0)
         console.log(ar)
 
-        var o = {name: "Thomas Shelby", age: Number(33)};        
+        var o = {name: "Thomas Shelby", age: 33};        
         var keys = Object.keys(o);
         var values = [];
         //iteração com loop for
@@ -44,7 +44,7 @@
         //iteração com loop for..in em arrays esparsos
         var sparceArr = new Array(5);
         for(var i = 0; i < sparceArr.length; i++){
-            sparceArr[i] = "Value: " + (i + Number(1))
+            sparceArr[i] = "Value: " + (i + 1)
         }
         
         for(var index in sparceArr){
@@ -55,8 +55,8 @@
         //Iteração com método for.Each()
         var data = [1, 2, 3, 4, 5];
         var sumOfSquares = 0;
-        data.forEach(function(x){
-            sumOfSquares += x*x;
+        data.forEach(function(item){
+            sumOfSquares += item * item;
         })
         console.log(sumOfSquares)
 
@@ -93,7 +93,7 @@
             
         }
         for(var j; j < arry.length; j++){
-            arry[j].push = j
+            arry[j].push(j)
         }
         console.log(arry)
 

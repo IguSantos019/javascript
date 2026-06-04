@@ -29,9 +29,9 @@
                 sum += num
                 console.log(num)
             })
-        console.log(sum)
+        //console.log(sum)
         }
-        forEach1()
+        //forEach1()
 
         /*
         //Para parar o laço forEach
@@ -53,7 +53,7 @@
             var a = [1, 2, 3];
             a.forEach((valorArray, IndiceArray, ArrayEmSi) => {console.log(valorArray, IndiceArray, ArrayEmSi)})
         }
-        exForEach1();
+        //exForEach1();
 
         function exForEach2(){
             var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -62,7 +62,7 @@
                 else{console.log(num, "IMPAR!")}
             })
         }
-        exForEach2();
+        //exForEach2();
 
         function exForEach3(){
             const numbers = [1, 2, 3];
@@ -78,7 +78,24 @@
             console.log(res)
         
         }
-        exForEach3();
+        //exForEach3();
+
+        function exForEach4(){
+            const person = [
+                {name: "Roger", age: 55, origin: "Brasil"},
+                {name: "Igor", age: 22, origin: "Brasil"},
+                {name: "Jhonn", age: 37, origin: "EUA"},
+                {name: "Thomas", age: 42, origin: "Canadá"}
+            ]
+            const personsName = person.map(({name}) => name)
+            const personsAge = person.map(({age}) => age)
+
+            console.log(personsName, personsAge)
+
+        }
+        //exForEach4()
+
+
 
         //Encapsulando o forEach em uma função que é passada para uma variável onde é chamada pelo array fora da função.
         const numbers = [10, 10];
@@ -88,10 +105,229 @@
             numbers.forEach(function(number){result += number})
             return result;
         }   
-        console.log(sumForEach(numbers))
-        console.log(sumForEach([5, 5]));
-        log
+        //console.log(sumForEach(numbers))
+        //console.log(sumForEach([5, 5]));
+        
 
+        //Método map() - causa efeito colateral no array e pode retornar um novo array com os novos resultados.
+        function map1(){
+            const numbers = [1, 2, 3];
+            //console.log(numbers)
+            console.log(numbers.map((x) => {return x*x}))
+            console.log(numbers)
+            
+        }
+        map1();
+
+        function map2(){
+            const tvShows = [
+                {name: "Breaking Bad", releaseYear: 2008},
+                {name: "Mr. Robot", releaseYear: 2015},
+                {name: "True Detective", releaseYear: 2014 },
+                {name: "Hannibal", releaseYear: 2013},
+                {name: "The Handmaid", releaseYear: 2013},
+                {name: "House M.D", releaseYear: 2004},
+                {name: "Watchmen", releaseYear: 2019}
+            ]
+            
+            const showName = tvShows.map((show) => show.name)
+            const showYear = tvShows.map(({releaseYear}) => releaseYear)
+            console.log(showName)
+            console.log(showYear)
+        }
+        map2();
+
+        //filtra aqueles conteúdos que se quer ter e os coloca em outro array.
+        function filter1(){
+            const a = [5, 4, 3, 2, 1];
+            //console.log(a)
+
+            const valuesPar = a.filter((x) => {return x % 2 == 0});
+            valuesPar.push("Números Par")
+            const valuesImpar = a.filter((x, i) => {return i % 2 == 0});
+            valuesImpar.push("Números Impar")
+            console.log(valuesImpar);
+            console.log(valuesPar);
+            
+
+
+            for(let i = 0; i < a.length; i++){
+                if(a[i] > 1){console.log(a[i])}
+                if(a[i] == 1){console.log("Igu é o número 1")}
+            }
+        }
+        filter1()
+
+        function filter2(){
+            const tarantinoMovies = [
+                {name: 'Bastardos inglórios', release: 2009},
+                {name: 'Pulp Fiction', release: 1994},
+                {name: 'Kill Bill: volume 2', release: 2004},
+                {name: 'Quatro Quartos', release: 1995},
+                {name: 'Sin City', release: 2005},
+                {name: 'Era uma Vez em... Hollywood', release: 2019},
+                {name: 'Django livre', release: 2012}
+            ]
+            const moviesBefore2000 = tarantinoMovies.filter(({release}) => {
+                return release < 2000;
+            })
+            console.log(moviesBefore2000);
+            
+
+            //console.log(tarantinoMovies);
+            
+        }
+        //filter2()
+
+        //O método includes() possibilita verificar se um array tem alguma propriedade com o nome passado por parâmetro.
+        function filter3(){
+            const firstTravelerCities = [
+                'Sydney',
+                'Berlim',
+                'Lisboa',
+                'Sófia',
+                'Praga',
+                'Bali',
+                'Florianópolis'
+            ]
+            const secondTravelerCities = ['Praga', 'Roma', 'Chiang Mai', 'Lisboa', 'berlim'];
+            console.log(firstTravelerCities, secondTravelerCities);
+            
+            const commonCities = firstTravelerCities.filter(city => secondTravelerCities.includes(city))
+            const notCommonCities = firstTravelerCities.filter(city => !secondTravelerCities.includes(city))
+            console.log(notCommonCities);
+            console.log(commonCities)
+        }
+        //filter3()
+
+
+        function every1(){
+            const arrayNums = [1, 2, 3, 4, 5];
+            const numsGreaterThan10 = arrayNums.every((x) => {x < 10; return console.log("Todos os números são menores que zero! true")});
+            const numLessThan0 = arrayNums.every((x) => {x < 0; return console.error("O array não tem números menores que zero! False")})
+            console.log(numsGreaterThan10, numLessThan0)
+        }
+        //every1()
+        
+        function some1(){
+            const array = [1, 2, 3, 4, 5];
+            console.log(array.some(num => {return num%2==0}));
+            console.log(array.some(isNaN));
+            //console.log(someEvenNumber);
+            
+        }
+        //some1()
+
+            function reduce1(){
+                const numbers = [1, 2, 3];
+                
+                const sum = numbers.reduce((accumulator, item) => {return accumulator + item}, 0);
+                console.log(sum);
+                
+                const namesAndSurnames = [
+                    {name:"Igor", surname:"Silva"},
+                    {name:"Tainara", surname:"Silva Gomes"},
+                    {name:"Maria", surname: "Eduarda"}
+                ]
+                const names = namesAndSurnames.reduce((accumulator, { name }) => `${accumulator} ${name} \n`, "");
+
+                console.log(names);
+                
+
+                const cart = [
+                    {name: 'Dark Souls III', price: 95.03},
+                    {name: 'Shadow of the Tomb Raider', price: 101.19},
+                    {name: 'Sekiro: Shadows Die Twice', price: 179.99},
+                    {name: 'Resident Evil 2', price: 119.90},
+                    {name: 'Death Stranding', price: 149.99}
+                ]
+                const productList = cart.reduce((accumulator, { name }) => `${accumulator}- ${name}\n`, "")
+                console.log(productList);
+                
+                const people = [
+                    {id: 5, name: 'Angelica', age: 18, federativeUnit: 'Pernambuco'},
+                    {id: 81, name: 'Thales', age: 19, federativeUnit: 'São Paulo'},
+                    {id: 47, name: 'Ana Carolina', age: 18, federativeUnit: 'Alagoas'},
+                    {id: 87, name: 'Felipe', age: 18, federativeUnit: 'Minas Gerais'},
+                    {id: 9, name: 'Gabriel', age: 20, federativeUnit: 'São Paulo'},
+                    {id: 73, name: 'Joana', age: 19, federativeUnit: 'Rôndonia'},
+                ]
+                const agesFrequency = people.reduce((accumulator, { age }) => {
+                    accumulator[age] = accumulator[age] + 1 || 1
+                    return accumulator
+                }, {})
+
+                console.log(agesFrequency);
+                console.log(!!NaN);
+                
+            }
+            reduce1()
+
+            /*
+                function higherOrderFunctions1(){
+                    
+                    const getMultiplier = (multiplier) => (aNumber) => aNumber * multiplier
+                    funcion getMultiplier(multiplier){
+                        return function(aNumber){
+                            return aNumber * multiplier
+                        }
+                    }
+                    const double = getMultiplier(2);
+                    const triple = getMultiplier(3);
+                    const quadruple = getMultiplier(4);
+
+                    console.log(quadruple(4))
+                }
+                higherOrderFunctions1()
+            */
+
+            //indexOf() - vai retornar em qual posição está o valor passado por parâmetro.
+            //lastIndexOf() - vai retornar em qual posição está o valor começando da direita para a esquerda, do final do array para o começo.
+            //caso não exista o valor ele irá retornar -1
+            function indexOfAndLastIndexOf(){
+                const array = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
+                console.log(array.indexOf(5, 4))
+                console.log(array.lastIndexOf(3))
+
+                //função que localiza todas as ocorrencias de um valor x em um array
+                function findAll(a, x){
+                    const allValuesCoicidents = [];
+                    let i = 0;
+                    while(i < a.length){
+                        i = a.indexOf(x, i);
+                        if(i === -1)break;
+                        allValuesCoicidents.push(i);
+                        i++;
+                    }
+                    if(i === -1)
+                    return allValuesCoicidents;
+                }
+                console.log(findAll(array, 0))
+            }
+            //indexOfAndLastIndexOf()
+
+            
+            //Objetos semelhantes a array
+
+            function Objarr(){
+                var a = {};
+
+                var i = 0;
+                while(i < 10){
+                    a[i] = i * i;
+                    i++;
+                }
+                a.length = i;
+
+                var total = 0;
+                for(var j = 0; j < a.length; j++){
+                    total += a[j];
+                }
+                console.log(total)
+                console.log(a);
+                
+            }
+            Objarr()
     </script>
 </body>
 </html>
