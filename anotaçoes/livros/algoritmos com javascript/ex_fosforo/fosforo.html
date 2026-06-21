@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acendendo fósforo</title>
+</head>
+<body>
+    
+
+    
+
+    <script>
+        alert("Vamos acender um palito de fósforo!");
+        alert("Primeiro irei pegar a caixa dos fósforos");
+        alert('Abrir a caixa de fósforos');
+        var havePalits = window.prompt('Há palito nesta caixa de fósforos? (s | n)');
+        if(havePalits === "n"){
+                    while(havePalits === "n"){
+                        alert("Tudo bem, vamos pegar outra caixa");
+                        alert("Pegando outra caixa de fósforos");
+                        alert("Abrindo a caixa")
+                        havePalits = window.prompt("Há palito nesta caixa de fósforos? (s | n)")
+                    }
+                 }if(havePalits === 's'){
+                        alert('Maravilha, temos palitos');
+                        alert("Vamos acender");
+                        alert("Riscando");
+                        var litUpOrNot = window.prompt("acendeu? (s | n)");
+                        while(litUpOrNot === "n"){
+                            alert("Tudo bem, vamos riscar denovo")
+                            alert('Riscando')
+                            litUpOrNot = window.prompt("acendeu? (s | n)")
+                        }
+                        
+                        alert("Perfeito, processo concluído!")
+                }
+        
+        
+
+
+    </script>
+</body>
+</html>
