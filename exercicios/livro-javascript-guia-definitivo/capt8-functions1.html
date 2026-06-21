@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8 - funções</title>
+</head>
+<body>
+    
+
+
+    <script>
+        /*
+            const f = function(x){return x*x}
+            console.log(f(5));
+            
+            const o = {function(x){return x*x}};
+            console.log(o.function(5))
+        */
+
+        //Definindo funções
+        //Imprime cada propriedade e o seu valor de o.
+        function defFuncoes1(){
+            const o = {x:1, y:2, z:3};
+            function printprops(o){
+                //nameProp é passado para o[nameProp] porque desta forma é possível acessar o valor do objeto de cada propriedade.
+                //x:1
+                //y:2
+                //z:3
+                for(var nameProp in o){
+                    console.log(`${nameProp}: ${o[nameProp]} \n`)
+                }
+
+            }
+            printprops(["4","5"])  
+            
+        }
+        defFuncoes1()
+
+        function defFuncoes2(x){
+            return x * 2 /5
+        }
+        const defFuncoes2const =  defFuncoes2(10)
+        console.log(defFuncoes2const);
+
+        const somar = (a, b) => a + b;
+        console.log(somar(5, 10));
+        
+        </script>
+    </body>
+</html>
