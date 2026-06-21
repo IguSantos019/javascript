@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções capt. 8</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //Propriedade de função, métodos e construtora
+
+
+        function check(args){
+            var actual = args.length;
+            var expected = args.callee.length;
+            if(actual !== expected){
+                throw Error("Expected " + expected + " args; got " + actual);
+            }
+        }
+        function f(x, y, z){
+            check(arguments);
+            console.log(arguments)
+            return x + y + z;
+        }
+        console.log(f(5, 5, 10))
+
+        //call
+
+        const person = {name: 'Alice'};
+
+        function greet(greeting){
+            console.log(`${this.name}`)
+        };
+        greet.call(person);
+
+        const iphone = {
+            product: 'Iphone', version: 6, year: 2025,
+        }
+        function versionAndYearIphones(){
+            console.log(`${this.product} versão ${this.version} lançado em ${this.year}`);
+        }
+        versionAndYearIphones.call(iphone)
+
+        const module = {
+            x: 34,
+        }
+        function sayXValue(comment){
+            console.log(`${this.x} ${comment}`)
+        }
+        sayXValue.apply(module,['x vale este valor'])
+
+        function bind01(y){return this.x + y}
+        var ob = {x:1};
+        var g = bind01.bind(ob);
+        console.log(g(2))
+    </script>
+</body>
+</html>

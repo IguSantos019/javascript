@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes e Módulos</title>
+</head>
+<body>
+    
+
+
+    <script>
+        /*
+            Em JavaScript, uma classe é um conjunto de objetos que herdam propriedades do mesmo objeto protótipo. Portanto, o objeto protórtipo é o principal recurso de uma classe.
+        
+        
+        */
+
+        //função inherit
+        //Criando um novo objeto que herda de um protótipo
+
+        function inherit(p){
+            if(p === null) throw TypeError();
+            if(Object.create)
+                return Object.create(p);
+            var t = typeof(p);
+
+            if(t !== "object" && t !== "function") throw TypeError();
+            function f(){};
+            f.prototype = p
+            return new f();
+        }
+
+        //classes e protótipos
+        //Função range que cria objetos range
+        /*
+            function range(from, to){
+                var r = inherit(range.methods);
+
+                r.from = from;
+                r.to = to;
+                return r;
+            }
+            range.methods = {
+                includes: function(x){return this.from <= x && x <= this.to},
+                foreach: function(f){
+                    for(var x = Math.ceil(this.from); x <= this.to; x++) f(x);
+                },
+                toString: function(){return "(" + this.from + "..." + this.to + ")"}
+            };
+        */
+        /*
+            var r = range(1, 3);
+            var p = range(1, 10);
+            console.log(r.includes(2))
+            r.foreach(console.log)
+            console.log(r)
+            console.log(p)
+            console.log(p.includes(5))
+            console.log(p.hasOwnProperty(5))
+            console.log(p.toString())
+            p.foreach(console.log)
+            console.log(range.methods)
+
+        */
+        //classes e construtoras
+        //Função Range() com construtora
+
+        function Range(from, to){
+            this.from = from;
+            this.to = to;
+        }
+        Range.prototype = {
+            //Por algum motivo não funciona com arrow function
+            //includes: (x) => {return this.from <= x && x <= this.to;},
+            includes: function(x) {return this.from <= x && x <= this.to;},
+            foreach: function(f)  {
+                for(var x = Math.ceil(this.from); x <= this.to; x++) f(x)
+            },
+            toString: function() {return "(" + this.from + "..." + this.to + ")"}
+        }
+        var r = new Range(1, 5);
+        console.log(r); 
+        var p = new Range(5, 20);
+        console.log(p);
+        var names = new Range('Igor', 'Silva',);
+        console.log(names)
+        console.log(names.toString())
+        console.log(r.includes(3))
+        r.foreach(console.log)
+        console.log(r.toString())
+
+        //Construtoras e indetidade de classe
+
+        /*
+            Como vimos, o objeto protótipo é fundamental para a identidade de uma classe: dois objetos são instâncias da mesma classe se, e somente se, herdam do mesmo objeto protótipo. A função construtora que inicializa o estado de um novo objeto não é fundamental: duas funções construtoras podem ter propriedades prototype que apontam para o mesmo objeto protótipo. Então, as duas construtoras podem ser usadas para criar instâncias da mesma classe.
+
+        */
+
+       //console.log(r instanceof Range) 
+       //true r herda de Range.prototype
+
+
+       //A propriedade constructor
+
+       function PropriedadeConstructor(){
+            var F = function(){};
+            var p = F.prototype;
+            var c = p.constructor;
+            console.log(c === F);
+            //verdadeiro: F.prototype.constructor === F para qualquer função.
+
+            const o = new F();
+            console.log(o.constructor === F);
+            //verdadeiro: a propriedade constructor especifica a classe
+            const novoRange = new Range(5, 10);
+            console.log(Range.prototype)
+            //Range.prototype tem 3 protótipos definidos explicitamente; includes, foreach, toString.
+            console.log(Range.constructor)
+            //Range.constructor é um prototype nativo de objeto
+
+            Range.prototype = {
+                constructor: Range,
+                includes: function(x) {return this.from <= x && x <= this.to;},
+                foreach: function(f)  {
+                    for(var x = Math.ceil(this.from); x <= this.to; x++) f(x)
+                },
+                toString: function() {return "(" + this.from + "..." + this.to + ")"}
+                }
+            console.log(Range.prototype.constructor)
+            //Agora temos o prototype constructor explicito na construtora Range.
+            console.log(Range.prototype.includes)
+
+
+       }
+       PropriedadeConstructor();
+       /*
+            function MyClasses(num1, num2){
+                    this.num1 = num1;
+                    this.num2 = num2;
+            }
+            MyClasses.prototype = {
+                    constructor: MyClasses,
+                    sum: function(num1, num2){return num1 + num2},
+                    square: function(x){return x*x},
+
+            }
+            const soma1 = new MyClasses()
+
+            console.log(soma1.sum(5, 5))
+            console.log(soma1.square(10))
+            const soma2 = new MyClasses();
+            console.log(soma2.sum(587, 154))
+
+            console.log(soma1.sum(5, 5))
+
+       */
+
+       //Classes estilo Java em JavaScript
+
+       //função extend do exemplo 6-2
+
+       function extend(o, p){
+            for(prop in p){
+                o[prop] = p[prop];
+            }
+       }
+
+
+       //Uma função simples para definir calsses simples
+       function defineClass(constructor, methods, statics){
+            if(methods) extend(constructor.prototype, methods)
+            if(statics) extend(constructor, statics);
+            return constructor;
+       }
+       var simpleRange = defineClass(function(f, t){this.f = f; this.t = t;},{
+            includes: function(x){return this.f <= x && x <= this.t},
+
+       })
+
+
+       function rogerMeloClassVideo(){
+            class Reptile{
+                constructor(firstAppearence){
+                    this.firstAppearence = firstAppearence;
+                }
+                /*
+                    //Este é um método get do objeto, significa que é um método que apenas retorna um valor
+                    getFirstAppearence (){
+                        return this.firstAppearence;
+                    }
+                */
+               //podemos usar um método getter
+
+               get firstTimeAppearence (){
+                    return this.firstAppearence;
+               }
+            }
+            const smaug = new Reptile('The Hobbit');
+            // { firstAppearence: 'The Hobbit' }
+            console.log(smaug)
+            smaug.firstAppearence // 'The Hobbit'
+            console.log(smaug.firstTimeAppearence)
+
+       }
+       rogerMeloClassVideo()
+
+
+       function modificateNamesForUpperOrLower(name){
+            this.name = name;
+       }
+       modificateNamesForUpperOrLower.prototype = {
+            displayNameUpper(){
+                if(this.name === this.name.toUpperCase()){
+                    return this.name.toLowerCase();
+                }else if(this.name === this.name.toLowerCase()){
+                    return this.name.toUpperCase();
+                }
+            }
+       }
+       var name1Lower = new modificateNamesForUpperOrLower('igor');
+       var name1Upper = new modificateNamesForUpperOrLower('TAINARA');
+       console.log(name1Lower.name)
+       console.log(name1Lower.displayNameUpper());
+       console.log(name1Upper.name)
+       console.log(name1Upper.displayNameUpper());
+
+    //Formas de verificar a classe de um objeto
+    //Não temos opções para saber qual objeto é de qual classe, mas
+    //podemos testar se o objeto tem instância(instanceof) de alguma
+    //classe.
+
+    //9.5.1 O operador instaceof
+
+    console.log("----------");
+    console.log(name1Lower instanceof modificateNamesForUpperOrLower)
+    //Verdadeiro o objeto name1Lower herda os protótipos da função 
+    //construtora modificateNamesForUpperOrLower()
+    const obj1 = {x:1}
+    console.log(obj1 instanceof modificateNamesForUpperOrLower)
+    //Falso, obj1 não herda protótipos de modificateNamesForUpperOrLower()
+
+    // 9.5.2 A propriedade constructor
+       
+    function typeAndValue(x){
+        if(x == null) return ""; //null e undefined não tem construtoras
+
+        switch(x.constructor){
+            case Number: return `Number: ${x}`;
+            case String: return `String: '${x}'`;
+            case Date: return `Date: ${x}`;
+            case RegExp: return `RegExp: ${x}`;
+            //case Complex: return `Complex: ${x}`;
+        }
+    }
+
+    //função classof() do exemplo 6-4 que mostra qual o tipo de qualquer valor
+
+    class Teste{
+        constructor(teste){
+            
+        }
+    }
+    console.log(modificateNamesForUpperOrLower.prototype.toString())
+    function classof(o){
+        if(o === null) return "Null";
+        if(o === undefined) return "Undefined";
+        return Object.prototype.toString.call(o).slice(8, -1);
+    }
+
+    //function type() para determinar o tipo de um valor:
+    Function.prototype.getName = function(){
+        if("name" in this) return this.name;
+        return this.name = this.toString().match(/function\s*([^(]*)\(/)[1];
+    }
+
+    function type(o){
+        var t, c, n; //tipo, classe, nome
+        
+        //caso especial para o valor Null
+        if(o === null) return "null";
+        //outro caso especial: NaN é o único valor que não é igual
+        //a si mesmo
+        if(o !== o) return "nan";
+
+        if((t = typeof o) !== "object") return t;
+
+        if((c = classof(o) !== "Object")) return c;
+
+        if(o.constructor && typeof o.constructor === "function" &&
+            (n = o.constructor.getName())) return n;
+
+        return "Object";
+    }
+
+    //console.log(type())
+
+    //9.6 Técnicas orientadas a objeto em JavaScript
+
+    
+    </script>
+</body>
+</html>

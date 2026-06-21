@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8 - funções</title>
+</head>
+<body>
+    
+
+
+    <script>
+        /*
+            const f = function(x){return x*x}
+            console.log(f(5));
+            
+            const o = {function(x){return x*x}};
+            console.log(o.function(5))
+        */
+
+        //Definindo funções
+        //Imprime cada propriedade e o seu valor de o.
+        function defFuncoes1(){
+            const o = {x:1, y:2, z:3};
+            function printprops(o){
+                //nameProp é passado para o[nameProp] porque desta forma é possível acessar o valor do objeto de cada propriedade.
+                //x:1
+                //y:2
+                //z:3
+                for(var nameProp in o){
+                    console.log(`${nameProp}: ${o[nameProp]} \n`)
+                }
+
+            }
+            printprops(["4","5"])  
+            
+        }
+        defFuncoes1()
+
+        function defFuncoes2(x){
+            return x * 2 /5
+        }
+        const defFuncoes2const =  defFuncoes2(10)
+        console.log(defFuncoes2const);
+
+        const somar = (a, b) => a + b;
+        //console.log(somar(5, 10));
+        
+
+        const testeArgumentos = function(x, y){
+            if(arguments.length != 2 | arguments.length > 2)
+                throw new Error("O número de argumentos necessários são dois!");
+            return x + y;
+        };
+
+        const maxNum = [0, 5, 10, 256];
+        let maior = 0;
+        maxNum.forEach((x) => {
+            maior = Math.max(maior, x);
+        })
+        console.log(maior);
+
+        //usando propriedade de objetos como argumentos.
+
+        //função que copia arrays
+        const arrayCopy = function(/*array ->*/ array, /*índice ->*/from_start, /*array*/ to, /*índice*/ to_start, /*integer*/ length){
+
+            //Código aqui.
+        }
+        const easyCopy = function(args){
+            arrayCopy(  args.from,
+                        args.from_start || 0,
+                        args.to,
+                        args.to_start || 0,
+                        args.length);
+
+                    
+        }
+        var a = [1, 2, 3, 4], b = [];
+        easyCopy({from: a, to: b, length: 4})
+        console.log(a, b)
+
+        console.log("Usando funções como dados")
+        function add(x,y){return x + y};
+        function subtract(x, y){return x - y};
+        function multiply(x, y){return x * y};
+        function divide(x, y){return x / y};
+
+        function operate(operator, operand1, operand2){
+            return operator(operand1, operand2);
+        }
+
+        var i = operate(add, operate(add, 2, 3), operate(multiply, 5, 5));
+        console.log(i)
+
+        const operators = {
+            add: function(x, y){return x + y},
+            subtract: function(x, y){return x - y},
+            multiply: (x, y) => x * y,
+            divide: (x, y) => x / y,
+            pow: Math.pow
+        }
+        function operate2(operation, operand1, operand2){
+            if(typeof operators[operation] === "function")
+                return operators[operation](operand1, operand2)
+            else throw Error("unknown operator");
+        }
+        var j = operate2("add", "hello", operate2("add", " ", "World!"))
+        var k = operate2("add", 1, 2);
+        var l = operate2("add", operate2("add", 5, 5), operate2("subtract", 15, 5));
+        console.log(j)
+        console.log(k)
+        console.log(l)
+        /*
+            function factorial(n){
+                if(n < 0) throw "Não existe fatorial de número negativo";
+                if(n === 0 || n === 1) return 1;
+                return n * factorial(n - 1)
+            }
+            //factorial[1] = 1;
+            console.log(factorial(5))
+        */
+
+        function factorial(n){
+            if(isFinite(n) && n > 0 && n == Math.round(n)){
+                if(!(n in factorial))
+                    factorial[n] = n * factorial(n - 1);
+                return factorial[n];
+            }
+            else return NaN;
+        }
+        factorial[1] = 1;
+
+        console.log(factorial(5))
+        console.log(typeof factorial(5))
+        
+        //Fazendo função e chamando imediatamente
+        console.log(function test1(x){return x *x }(7))
+
+        //Closures abaixo, escopo léxico do javaScript
+        const scope = "global scope";
+        function checkScope(){
+            function f(){return scope};
+            const scope = "local scope";
+            return f;
+        }
+        console.log(checkScope()())
+
+        function counter(){
+            var n = 0;
+            return {
+                count: function(){return n++},
+                reset: function(){return n = 0;}
+            }
+        }
+        var c = counter();
+        console.log(c)
+        c.count()
+        console.log(c.count())
+        //c.count()
+        console.log(c.count())
+        c.reset()
+        console.log(c.count())
+
+        function counter2(n){
+            return {
+                get count(){return n++},
+                set count(m){
+                    if (m >= n) n = m;
+                    else throw Error('Count can only be set to a larger value');
+                }
+            }
+            
+        }
+
+
+        //Métodos de acesso da propriedade privada usando closures
+
+        //Esta função adiciona métodos de acesso para uma propriedade com
+        //o nome especificado no objeto o.
+
+        function addPrivateProperty(o, name, predicate){
+            var value;
+
+            o["get" + name] = function(){return value;};
+
+            o["set" + name] = function(v){
+                if(predicate && !predicate(v)){
+                    throw Error("set" + name + ": invalid value " + v);
+                
+                }else
+                    value = v;
+            };
+        }
+
+        var o = {};
+        addPrivateProperty(o, "Name", (x) => typeof x == "string");
+        o.setName("Frank");
+
+        console.log(o.getName())
+        //o.setName(0);
+
+        const constFunc = function(v){return function(){return v}}
+        
+        const funcs = [];
+        for(var i = 0; i < 10; i++){
+            funcs[i] = constFunc(i);
+        }
+
+        console.log(funcs[5]())
+        console.log(funcs)
+
+
+        console.log(constFunc)
+        </script>
+    </body>
+</html>
