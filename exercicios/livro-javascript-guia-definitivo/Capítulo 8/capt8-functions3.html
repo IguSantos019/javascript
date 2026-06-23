@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação funcional</title>
+</head>
+<body>
+    <script>
+        //Programação funcional.
+
+        //processando arrays com funções
+
+        //Modo de programação não funcional
+        function noFuncional01(){
+
+            const nums = [1, 1, 3, 5, 5];
+
+            var total = 0;
+            for(var i = 0; i < nums.length; i++){
+                total += nums[i];
+                var mean = total / nums.length;
+            }
+            console.log(mean)
+
+            total = 0;
+
+            for(var i = 0; i < nums.length; i++){
+                var deviation = nums[i] - mean;
+                total += deviation * deviation;
+            }
+            var stddev = Math.sqrt(total/(nums.length - 1));
+            console.log(stddev);
+        }
+        noFuncional01();
+
+        //Modo de programação funcional
+
+        function funcional01(){
+            const sum = (x, y) => x + y;
+            const square = (x) => x * x;
+
+            var nums = [1, 1, 3, 5, 5];
+            var mean = nums.reduce(sum)/ nums.length;
+            console.log(mean)
+            var deviations = nums.map(x => x - mean);
+            var stddev = Math.sqrt(deviations.map(square).reduce(sum) / (nums.length - 1));
+            console.log(stddev)
+
+        }
+        funcional01();
+
+
+        //Funções de alta ordem
+
+        /*
+            Função de alta ordem é uma função que opera sobre funções, recebendo uma ou mais funções como argumentos e retornando uma nova função
+        */
+
+
+        function not(f){
+            return function(){
+                var result = f.apply(this. arguments);
+                return !result;
+            }
+        }
+        var even = x => x % 2 === 0;
+        var odd = not(even);
+        const data = [1, 1, 3, 5, 5];
+        //Não temos numeros pares
+        console.log(even(data))
+        //Mesma coisa aqui, passando o array e o método every com a função
+        //even()
+        console.log(data.every(even))
+        //true, passando o array e o método every com a variavel odd
+        //que recebeu a função not e como parametro a função even
+        //que verifica se um número é par
+        console.log(data.every(odd))
+
+
+        //Outro exemplo de função de alta ordem
+
+        var map = Array.prototype.map 
+                  ? function(a, f){ return a.map(f);} 
+                  : function(a, f){
+                    var results = [];
+                    for(var i = 0, len = a.length; i < len; i++){
+                        if(i in a) results[i] = f.call(null, a[i], i, a)
+                    }
+                    return results;
+                  };
+
+
+        function mapper(f){
+            return function(a){return map(a, f);};
+        }
+        var increment = function(x) { return x + 1; };
+        var incrementer = mapper(increment);
+
+        const a = incrementer([1, 2, 3])
+        console.log(a)
+
+
+        /*
+            Métodos call e apply
+        */
+        const carro = {
+            marca: 'Ferrari',
+            modelo: 'F40'
+        };
+        function exibirDados(cor, ano){
+            console.log(`Este carro é uma ${this.marca} ${this.modelo}, cor ${cor}, ano ${ano}.`)
+        }
+        //Método call espera o código desta forma:
+        //função.call(objeto, parametros parametros adicionais)
+        exibirDados.call(carro, 'Vermelho', 1987)
+
+
+        const universitario = {
+            nome: 'Carlos',
+            faculdade: 'Análise e desenvolvimento de sistemas'
+        }
+        function exibirUniversitario(idade, profissao, pontuaçao){
+            console.log(`Olá ${this.nome}, você está cursando ${this.faculdade} com ${idade} anos. Parabéns! Está se especializando para a profissão de ${profissao}${pontuaçao}`)
+        }
+        exibirUniversitario.call(universitario, 48, 'Programador', '.')
+        
+        //Usando apply()
+        exibirUniversitario.apply(universitario, [18, 'Programador', '!'])
+
+
+        //Outro exemplo que recebe duas funções f e g e retorna uma nova
+        //função que calcula f(g()):
+        function compose(f, g){
+            return function(){
+                return f.call(this, g.apply(this, arguments));
+            };
+        }
+
+        /*
+            Método bind() 
+        */
+        //Método bind cria uma nova função que, quando chamada
+        //tem sua palavra-chave "this" definida com um valor
+        //fornecido.
+        const pessoa = {
+            nome: 'Beatriz',
+            relacionamento: 'Namorada',
+            funcaoDizerOla: function(){
+                console.log(`Olá ${this.nome}, minha ${this.relacionamento} como é bom te ver!`)
+            } 
+        }
+        const saudarPessoa = pessoa.funcaoDizerOla.bind(pessoa)
+        saudarPessoa()
+        
+
+        const sum = (x, y) => x + y;
+        const square = x => x * x;
+        var squareofsum = compose(square, sum);
+
+        console.log(squareofsum(2, 3))
+
+
+
+        //Aplicação parcial de funções
+
+
+        //Uma função utilitaria para converter um objeto semelhante 
+        //a um array em um array verdadeiro
+        
+        var objSemelhanteArray = {};
+        var i = 0;
+        while(i < 5){
+            objSemelhanteArray[i] = 'Pessoa ' + i;
+            i++;
+        }
+        console.log(objSemelhanteArray)
+
+        function array(a, n){return Array.prototype.slice.call(a, n || 0)};
+
+        function partialLeft(f /*, ...*/){
+            var args = arguments;
+            return function(){
+                var a = array(args, 1);
+                a = a.concat(array(arguments));
+                return f.apply(this, a)
+            }
+        }
+        
+    </script>
+</body>
+</html>

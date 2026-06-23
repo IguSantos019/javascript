@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //escopo léxico
+        //escopo léxico basicamente significa que as variáveis ou 
+        //constantes declarada dentro de funções, podem ser
+        //acessadas somente dentro dessas funções
+        //fora não é possível.
+
+        const external = () => {
+            const book = 'Sapiens: Uma Breve História da Humanidade'
+            const internal = () => {
+                console.log(book.toUpperCase())
+            }
+            internal()
+        }
+        external();
+
+        //closures
+        const lexical = "Oi léxico";
+        const safe = (secret) => {
+            const local = "Oi local";
+            console.log(lexical)
+
+        }
+        safe()
+
+        //Esta função torna privado qualquer valor que seja passado pela
+        //função
+        const safe2 = secret => ({
+            getSecret: () => secret
+
+        })
+        const privateUserData = 'Dado privado'
+
+        //Este objeto resebeu um dado que foi passado para a função 
+        //safe2() com o valor passado por parâmetro
+        //safe2(privateUserData), logo este valor não pode ser modificado
+        //fora desta função.
+        const obj = safe2(privateUserData)
+        
+        const addTo = function(a){return function(b){return a + b}}
+
+        const increment = addTo(1)
+        const increment20 = addTo(20)
+        const increment10 = addTo(10)
+
+        console.log(increment(7))
+        console.log(increment10(7))
+        console.log(increment20(7))
+    </script>
+</body>
+</html>

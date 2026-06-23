@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <p id="timestamp"></p>
+
+    <script>
+        //setTimeout(function(){alert("Hello world!")}, 5000);
+
+        var timestamp = document.getElementById("timestamp")
+        if(timestamp.firstChild == null){
+            timestamp.appendChild(document.createTextNode(new Date().toString()))
+        };
+        timestamp.style.background = "yellow";
+        timestamp.className = "highlight";
+        
+        timestamp.onclick = function(){this.innerHTML = new Date().toString()};
+
+
+    </script>
+</body>
+</html>
