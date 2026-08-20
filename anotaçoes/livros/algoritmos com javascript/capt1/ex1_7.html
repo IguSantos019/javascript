@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 1.7</title>
+</head>
+<body>
+    
+
+
+    <script>
+        const calcValorJantar = () => {
+            const valorJantar = Number(window.prompt("Valor do jantar: "));
+            const taxaGorjeta = 10;
+            const gorjetaSobreaConta = valorJantar * taxaGorjeta / 100
+            let totaldaConta = valorJantar + gorjetaSobreaConta;
+            totaldaConta = totaldaConta.toFixed(2); 
+            alert(`\nValor do jantar: R$ ${valorJantar.toFixed(2)} \n Taxa da gorjeta: ${taxaGorjeta}% \n Valor da gorjeta sobre a conta: R$ ${gorjetaSobreaConta} \n Total: R$ ${totaldaConta}`)
+        }
+        calcValorJantar();
+        
+
+
+
+    </script>
+</body>
+</html>
