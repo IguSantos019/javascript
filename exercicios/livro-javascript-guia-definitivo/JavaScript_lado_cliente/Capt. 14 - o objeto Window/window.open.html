@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto open()</title>
+</head>
+<body>
+    <button id="button">Clique aqui</button>
+    
+    <button id="btnDialog">Arquivo dialogs</button>
+
+    <button id="btnClose">Fechar página</button>
+    <script>
+        document.getElementById("button").addEventListener("click", function(){
+            window.open("file:///C:/estudos/javascript/exercicios/livro-javascript-guia-definitivo/JavaScript_lado_cliente/Capt.%2013/abertura_de_janela_com_window.open", "Abertura de janela com window.open()");
+        })
+
+        document.getElementById("btnDialog").addEventListener("click", function(){
+            var w = window.open("window_dialogs_basics.html", "dialogs_basics", "width=500, height=500");
+        });
+
+        var w = window.open();
+        w.alert("Veja o meus itens a venda na Amazon!");
+        w.location = "https://amazon.com.br";
+        //resulta em um pop-up bloqueado pelo navegador.
+
+        document.getElementById("btnClose").addEventListener("click", function(){
+            w.window.close();
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+        Hello World!
+        <ul >
+            <li id="lista1"></li>
+        </ul>
+    </body>
+</html>
+
+<script>    
+    var firstChildHead = document.childNodes[0].firstChild;
+    //firstChild de document.childNodes é <head>
+    console.log(firstChildHead)
+    var nextSibling = document.childNodes[0].lastChild.nodeName;
+    //ultimo filho do document > BODY
+    console.log(nextSibling);
+
+    const li = document.getElementById("lista1");
+    var ul = li.parentNode;
+    console.log(ul)
+    
+</script>

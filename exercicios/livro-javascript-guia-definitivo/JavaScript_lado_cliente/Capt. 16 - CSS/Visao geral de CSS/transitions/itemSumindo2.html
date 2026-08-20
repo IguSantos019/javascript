@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clique para sumir o item</title>
+    <style>
+        #item{
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background-color: brown;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.421);
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="item">
+
+    </div>
+    <script>
+
+        const item = document.querySelector('#item');
+        item.addEventListener('click', function(){
+
+            (()=>{
+                // item.style.transform = "translateX(500px)";
+                item.style.transform = 'scale(0.5)'
+            })();
+
+            item.style.opacity = 0;
+            item.style.transition = "all 2s ease";
+
+        })
+
+        const itemStyles = window.getComputedStyle(item, "").backgroundColor;
+        console.log(itemStyles);
+    </script>
+</body>
+</html>

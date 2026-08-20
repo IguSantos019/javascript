@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97vw;
+    height: 97vh;
+    flex-direction: column;
+}
+button{
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1.1em;
+}
+#containerCarrinho{
+    text-align: center;
+    align-items: center;
+}
+.carrinho > p{
+    font-size: 1.2rem;
+}
+p#adcPecas{ font-size: 1.4rem; text-align: center;}
+#total{
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.hide{
+    display: none;
+}
+#agradecimento{ font-size: 1.7em;}

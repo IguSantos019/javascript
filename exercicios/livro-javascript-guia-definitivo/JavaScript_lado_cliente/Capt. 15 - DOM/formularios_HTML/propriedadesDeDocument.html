@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades de Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        const cokie = document.cookie
+        const dominio = document.domain; 
+        console.log(cokie);
+        console.log(dominio);
+
+        const lastModiefied = document.lastModified;
+        console.log(lastModiefied);
+
+        const Locationn = document.location;
+        console.log(Locationn)
+
+        const referer = document.referrer;
+        console.log(referer);
+
+        const title = document.title;
+
+        console.log(title);
+
+        const url = document.url;
+        console.log(url);
+
+
+
+        document.write("<p>Document title: " + document.title);
+        document.write("<br>URL: " + document.URL);
+        document.write("<br>Referred by: " + document.referrer);
+        document.write("<br>Modified on: " + document.lastModified);
+        document.write("<br>Accessed on: " + new Date());
+
+    </script>
+</body>
+</html>

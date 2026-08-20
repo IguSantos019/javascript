@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+</head>
+<body>
+    <form>
+        <select name="" id="" style="width: 100px;">
+            <option value="item 1">item 1</option>
+            <option value="item 2">item 2</option>
+            <option value="item 3">item 3</option>
+            <option value="item 4">item 4</option>
+        </select>
+    </form>
+
+    <script>
+
+        const select = document.querySelector('select');
+        select.onchange = (event)=>{
+            console.log(event.target)
+        }
+
+    </script>
+</body>
+</html>

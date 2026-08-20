@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        .container{
+            margin: auto;
+            margin-top: 15px;
+            border: 8px solid red;
+            text-align: center;
+            width: 500px;
+            padding: 10px;
+        }
+        .content h2, h1{
+            font: bolder italic 40px serif;
+            margin-bottom: 15px;
+            color: blue;
+        }
+        .content p {
+            text-align: justify;
+            font: bold normal 25px serif;
+            color: red;
+        }
+        footer p {
+            margin-top: 3%;
+            text-align: center;
+            font-family: monospace;
+            font-size: 1.3em;
+        }
+        footer{
+            margin: auto;
+            width: 500px;
+
+        }
+        .upper{
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cascading Style Sheets Demo</h1>
+    <div class="container">
+        <div class="content">
+            <h2>Warning</h2>
+            <p>Este é um aviso! Observe como ele chama a atenção com seu texto em negrito e cores vivas. Note também que o título está centralizado e em itálico azul.</p>
+        </div>
+    </div>
+    <footer>
+        <p class="upper">Este parágrafo está centralizado e aparece em letras maiúsculas. <br> <span style="text-transform: none; width: 500px; text-align: left">Here we explicity use an inline style to override the uppercase letters.</span></p>
+
+    </footer>
+</body>
+</html>

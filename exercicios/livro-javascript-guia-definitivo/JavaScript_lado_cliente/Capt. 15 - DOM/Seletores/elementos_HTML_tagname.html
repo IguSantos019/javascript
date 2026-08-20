@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName</title>
+    <style>
+        body{
+            width: 600px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Olá, seja bem vindo!</h1>
+    <h2>Escolha a cor para colocar neste texto abaixo:</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta expedita vel ducimus ullam sint, quas praesentium aperiam reiciendis nisi, nam distinctio voluptates autem mollitia eligendi enim? Quam accusamus amet culpa!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, quia eveniet ducimus modi possimus laboriosam omnis odit temporibus laborum illo, ab cumque necessitatibus reiciendis beatae, consequuntur autem dolor sit. Minima.</p>
+
+    <div>
+        <input type="radio" name="colors" id="colorRed" value="red"><label for="colorRed" style="color: red;">Vermelho</label> <br>
+        <input type="radio" name="colors" id="colorYellow"value="yellow" ><label for="colorYellow" style="color: rgb(255, 255, 0);">Amarelo</label> <br>
+        <input type="radio" name="colors" id="colorBlue" value="blue"><label for="colorBlue" style="color: blue;">Azul</label> <br> 
+    </div>
+
+    <p id="teste"></p>
+    <script>
+        
+        const radioColors = document.getElementsByName("colors");
+        var paragrafosAlterados = document.getElementsByTagName("p")[0];
+
+        radioColors.forEach(function(radio){
+            radio.addEventListener("click", function(event){
+                if(event.target.checked){
+                    var valueOfEvent = event.target.value
+                    paragrafosAlterados.style.color = valueOfEvent
+                    
+                    if(valueOfEvent == "yellow"){
+                        paragrafosAlterados.style.backgroundColor = "black";
+                    }else{
+                        paragrafosAlterados.style.backgroundColor = "white";
+                    }
+                }
+            })
+        })
+        const teste = document.getElementById("teste");
+
+        //getElementsByName() podem ser iterados como arrays com forEach
+        radioColors.forEach(radio => {
+            radio.addEventListener("click", function(event){
+                //para cada radio no radioColors
+                //adiciona um escutador de evento "click" e retorna uma função com um parametro
+                //que se refere ao input do tipo radio 
+                if(event.target.checked){
+                    //aqui verifica qual foi clicado, ou checked
+                    var valueOfRadioColors = event.target.value;
+                    //e aqui passa o valor desse click para a variavel
+                    teste.innerHTML = valueOfRadioColors;
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

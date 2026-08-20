@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar / Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="containerbtn">
+        <div class="abas">
+            <button style="border-top-left-radius: 10px;" class="ativa" data-aba="entrar">Entrar</button>
+            <button style="border-top-right-radius: 10px;" data-aba="cadastrar">Cadastrar-se</button>
+        </div>
+    </div>
+<div class="conteudos">
+    <div>
+        <form class="form" data-conteudo="entrar">
+            <input type="text" name="email" id="idEmail" placeholder="Digite seu email">
+            <input type="password" name="senha" id="idSenha" placeholder="Digite sua senha">
+            <button>Entrar</button>
+        </form>
+    </div>
+    <div class="hide" data-conteudo="cadastrar">
+        <form class="form">
+                <input type="text" name="email" id="idEmail" placeholder="Digite seu email">
+                <input type="password" name="senha" id="idSenha" placeholder="Digite sua senha">
+                <input type="password" name="senha" id="idSenha" placeholder="Confirme sua senha">
+                <button type="submit" class="buttonLoginCad" >Cadastrar</button>
+        </form>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

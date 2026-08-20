@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text input</title>
+</head>
+<body>
+    
+
+    <input type="text" placeholder="digite algo">
+    <button>Enviar</button>
+    <video src="JAPAN STREET DRIFT TOYOTA JZX90 - Auto Culture (720p, h264, youtube).mp4" width="300px" height="300px"></video>
+    <script>
+        const input = document.querySelector('input');
+        const video = document.querySelector('video');
+        video.addEventListener('canplay', ()=> {
+
+        })
+        input.addEventListener('keypress', e => {
+            document.querySelector('button').onclick = ()=>{alert(e.key);}
+        })
+        
+    </script>
+</body>
+</html>

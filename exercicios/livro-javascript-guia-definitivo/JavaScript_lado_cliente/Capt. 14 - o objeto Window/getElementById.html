@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById()</title>
+</head>
+<body>
+    
+
+    <script>
+        var ui = ["input", "prompt", "heading"];
+        ui.forEach(id => {
+            ui[id] = document.getElementById(id);
+        })
+
+        var $ = function(id){return document.getElementById(id)};
+        ui.prompt = $("prompt");
+
+        console.log(ui[0]);
+        
+    </script>
+</body>
+</html>

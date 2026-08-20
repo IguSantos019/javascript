@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 05</title>
+</head>
+<body>
+    
+    <input type="number" name="num01" id="num01" placeholder="1° Número">
+    <div id="operators">
+        <button value="+">+</button>
+        <button value="-">-</button>
+        <button value="*">*</button>
+        <button value="/">/</button>
+    </div>
+    <input type="number" name="num02" id="num02" placeholder="2° Número">
+    <br>
+    <button id="enviar">Enviar</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        
+        operators.addEventListener("click", function obterOperador(event){
+            const buttonEnviar = document.getElementById("enviar"); 
+            buttonEnviar.onclick = function(){
+                var num01 = parseFloat(document.querySelectorAll("input")[0].value);
+                var num02 = parseFloat(document.querySelectorAll("input")[1].value);
+
+                var operators = document.querySelector("#operators");
+                var elementoClicado = event.target.textContent;
+                
+
+                if(isNaN(num01) || isNaN(num02)){
+                    alert("Precisa ser um número para fazer calculos!");
+                    var resultCalc = 0;
+                    if(elementoClicado === "+"){
+                        resultCalc = num01 + num02;
+                    }else if(elementoClicado === "-"){
+                        resultCalc = num01 - num02;
+                    }else if(elementoClicado === "*"){
+                        resultCalc = num01 * num02;
+                    }else if(elementoClicado === "/"){
+                        if(num02 === 0){
+                            document.getElementById("result").innerHTML = "Divisão por zero não é possível!";
+
+                        }
+                        resultCalc = num01 / num02;
+                    }
+                    document.getElementById("result").innerHTML = resultCalc;
+                
+                }
+            }
+
+        })
+
+        
+    </script>
+</body>
+</html>

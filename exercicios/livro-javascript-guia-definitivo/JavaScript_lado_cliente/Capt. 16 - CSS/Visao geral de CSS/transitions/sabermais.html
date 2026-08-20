@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        #container{
+            max-width: 400px;
+            max-height: 340px;
+            text-align: justify;
+            overflow: hidden;
+            padding: 10px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.577);
+            border-radius: 0px 0px 5px 5px;
+            padding-top: 25px;
+            transition: max-height 1s;
+        }
+        .botao{
+            display: flex;
+            width: 380px;
+            justify-content: right;
+            align-items: end;
+        }
+        button{
+            padding: 8px;
+            font-size: 0.8em;
+            margin-top: 5px;
+            color: rgb(55, 55, 55);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 30%;
+            transition: background-color linear 0.2s, transform 0.2s;
+            border-radius: 5px;
+
+        }
+        #container.abrir{
+            max-height: 700px;
+            transform: scale(1.05);
+            
+        }
+        button:hover{
+            background-color: white;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.564);
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab incidunt voluptatum maiores quo ipsa quam beatae vitae suscipit libero, dolores tempore odit fuga ratione totam voluptas! Mollitia distinctio voluptatum adipisci.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus fugit ipsa provident quos similique hic expedita. Qui ut laudantium laborum nesciunt sit non rerum aliquid, odit vero itaque explicabo quia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae hic aut a sunt quasi, cumque perspiciatis necessitatibus provident natus et suscipit aliquam beatae architecto tempore, ipsam accusantium. Dolorem, assumenda facilis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem accusantium repellendus saepe fugit perferendis quisquam officiis qui. Similique voluptates eaque deleniti hic sapiente quae voluptas sequi, magnam culpa nisi laborum?</p>
+        
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo perspiciatis excepturi distinctio quisquam, suscipit magnam veritatis laborum, sequi saepe officia assumenda. Assumenda dicta fuga expedita dignissimos numquam eligendi distinctio eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non in officia inventore est provident beatae deserunt. Voluptates possimus laboriosam iure soluta, impedit voluptate veritatis molestiae culpa, sequi quos earum recusandae.</p>
+    </div>
+    <div class="botao"><button>Saber mais</button></div>
+
+    <script>
+        (()=>{
+            var container = document.querySelector('#container');
+            const button = document.querySelector('button');
+            button.addEventListener('click', function(){
+                
+                if(container.className == 'abrir'){
+                    container.className = '';
+                    button.textContent = 'saber mais';
+                }else{
+                    button.style.marginTop = '18px';
+                    container.className = 'abrir';
+                    button.textContent = 'saber menos';
+                }
+
+            })
+        })()
+
+    </script>
+</body>
+</html>

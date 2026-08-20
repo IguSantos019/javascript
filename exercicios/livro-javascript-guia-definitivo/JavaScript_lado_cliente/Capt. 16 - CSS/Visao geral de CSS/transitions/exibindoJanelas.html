@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibindo janelas com CSS</title>
+    <style>
+        div.window{
+            position: absolute;
+            width: 300px; height: 200px;
+            border: 3px outset gray;
+        }
+        div.titlebar{
+            position: absolute;
+            top: 0px; height: 18px;
+            width: 290px;
+            background-color: #aaa;
+            border-bottom: groove gray 2px;
+            padding: 3px 5px 2px 5px;
+            font: bold 11pt sans-serif;
+        }
+        div.content{
+            position: absolute;
+            top: 25px;
+            height: 165px;
+            width: 290px;
+            padding: 5px;
+            overflow: auto;
+            background-color: #fff;
+        }
+        div.translucent{
+            opacity: .75;
+            filter: alpha(opacity=75);
+        }
+    </style>
+</head>
+<body>
+    <div class="window" style="left: 10px; top: 10px; z-index: 10;">
+        <div class="titlebar">Test Window</div>
+        <div class="content">
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+            | <br>
+        </div>
+        
+    </div>
+    <div class="window" style="left: 75px; top: 110px; z-index: 20;">
+            <div class="titlebar">Another Window</div>
+            <div class="translucent" style="background-color: #ccc; font-weight: bold;">
+                This is another window. Its <i>z-index</i> puts in on top of the other one. CSS styles make its content area translucent, in browsers that support that.
+            </div>
+        </div>
+</body>
+</html>

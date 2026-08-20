@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <label for="opt1">Escolha</label>
+    <input id= "opt1" type ="checkbox" name = "options" value="giftwrap" onchange="order.options.giftwarp = this.checked;">
+                
+    <!-- JavaScript em URLs -->
+     <a target="_self" href="javascript: new Date().toLocaleTimeString();">What time is it?</a>
+
+     <!-- Scripts síncronos, assíncronos e adiados -->
+
+     <h1>table of Factorials</h1>
+     <script>
+        function factorial(n){
+            if(n <= 1) return n;
+            else return n * factorial(n - 1);
+        }
+        document.write("<table>");
+        document.write("<tr><th>n|</th><th>n!</th>></tr>");
+        for(var i = 1; i <= 10; i++){
+            document.write("<tr><td>" + i + "  |" + "</td><td>" + factorial(i) + "</td></tr>");
+        }
+        document.write("</table>");
+        document.write("Generated at " + new Date());
+     </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05</title>
+</head>
+<body>
+    <form name="opcoesItens" style="display: flex; flex-direction: column;">
+        <label><input type="checkbox" name="" id="item1" value="item 1" checked>Item 1</label>
+        <label><input type="checkbox" name="" id="item2" value="item 2">Item 2</label>
+        <label><input type="checkbox" name="" id="" value="item 3">Item 3</label>
+        <label><input type="checkbox" name="" id="" value="item 4">Item 4</label>
+        <button>Enviar</button>
+        
+        <input type="text" name="arrival" placeholder="ex:2026/08/03">
+    </form>
+    <script>
+        var item2 = document.querySelector('#item2');
+        if(item2.defaultChecked){
+            console.log('igu');
+        }
+
+    </script>
+</body>
+</html>

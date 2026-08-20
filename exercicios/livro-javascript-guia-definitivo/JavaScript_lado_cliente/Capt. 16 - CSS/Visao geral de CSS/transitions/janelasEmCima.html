@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma janela em cima da outra</title>
+    <style>
+        div.window{
+            width: 300px; height: 200px;
+            overflow: scroll;
+            border: 3px outset gray;
+        }
+        #firstWindow{
+            opacity: .07;
+            filter: alpha(opacity=25);
+        }
+        div.titlebar{
+            font: bold 1.2em sans-serif;
+            background-color: gray;
+            border-bottom: groove gray;
+        }
+        #AnotherWindow{
+            position: absolute;
+            top: 100px;
+            left: 75px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="window" id="firstWindow">
+        <div class="titlebar">One Window</div>
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rem ipsum qui optio blanditiis fugiat minus error tempora placeat neque! Sit temporibus eos provident. Incidunt inventore debitis tempore numquam dolorum? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate omnis fugiat repellendus modi illo voluptas ex sed repudiandae voluptatibus nulla ut sunt dolorum pariatur quidem asperiores, molestias tenetur mollitia.
+        </div>
+    </div>
+    <div class="window" id="AnotherWindow">
+        <div class="titlebar">Another Window</div>
+        <div class="content" style="font: bold 1.1em sans-serif; ">
+            <p>Desculpe essa janela não está mais disponivel para visualização</p>
+            <button>Mostrar</button>
+        </div>
+    </div>
+
+    <script>
+        const firstWindow = document.querySelector('#firstWindow');
+        const AnotherWindow = document.querySelector('#AnotherWindow');
+        firstWindow.addEventListener('mouseenter', function(){
+            firstWindow.style.opacity = .03;
+            firstWindow.style.filter = 'alpha(opacity=03)';
+            
+            (function mostrarAnotherWindow(){
+                document.getElementById('AnotherWindow').style.opacity = 1;
+                
+            })();
+            AnotherWindow.addEventListener('mouseenter', function(){
+                document.getElementById('AnotherWindow').style.opacity = 1;
+            
+             })
+
+        })
+        firstWindow.addEventListener('mouseleave', function(){
+            firstWindow.style.opacity = .05;
+            
+            (function ocultarAnotherWindow(){
+                document.getElementById('AnotherWindow').style.opacity = 0;
+                
+            })()
+            AnotherWindow.addEventListener('mouseenter', function(){
+                document.getElementById('firstWindow').style.opacity = 0;
+                
+                
+
+            })
+        })
+        document.querySelector('button').addEventListener('click', function(){
+            firstWindow.style.opacity = 1;
+            firstWindow.style.height = "250px";
+            firstWindow.style.overflow = 'visible';
+
+            AnotherWindow.style.opacity = 0;
+
+
+        })
+        
+        
+    </script>
+</body>
+</html>

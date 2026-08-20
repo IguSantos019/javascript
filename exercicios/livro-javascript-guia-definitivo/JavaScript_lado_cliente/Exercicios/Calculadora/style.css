@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+}
+.calculadora{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+.calculator_display{
+    border: 3px solid black;
+    border-bottom: 0px;
+    width: 244px;
+    text-align: right;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fff;
+}
+button{
+    font-size: 1.1em;
+    background-color: white;
+    border: 1px solid rgb(91, 91, 91);
+    cursor: pointer;
+}
+button:active{
+    background-color: lightgray;
+}
+.class_buttons{
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 50px);
+    grid-template-areas: 
+    'operator-add operator-sub operator-mult operator-div'
+    'num-7 num-8 num-9 equal'
+    'num-4 num-5 num-6 equal'
+    'num-1 num-2 num-3 equal'
+    'num-0 dot clear equal';
+
+}
+.equal{
+    background-color: rgb(111, 253, 253);
+}
+.equal:active{
+    background-color: rgb(32, 210, 210);
+}
+

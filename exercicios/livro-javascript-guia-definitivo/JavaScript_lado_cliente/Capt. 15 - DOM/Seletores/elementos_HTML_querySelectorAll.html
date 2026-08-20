@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.querySelectorAll</title>
+    <style>
+        #fieldForm{
+            width: 700px;
+            height: 500px;
+            border: 1px solid black;
+            font-size: 1.3em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        legend{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, seja bem-vindo!</h1>
+    
+
+    <ul id="listaCompleta">
+        <li id="itemRoxo">Item Roxo</li>
+        <li id="itemRoxo">Item Roxo</li>
+        <li id="itemVerde">Item Verde</li>
+        <li id="itemVerde">Item Verde</li>
+        <li id="itemAzul">Item Azul</li>
+        <li id="itemAzul">Item Azul</li>
+    </ul>
+    <ul id="listaCompleta2">
+        <li id="itemLaranja">Item Laranja</li>
+        <li id="itemMarrom">Item Marrom</li>
+        <li id="itemAmarelo">Item Amarelo</li>
+    </ul>
+
+    <script>
+        const listaRoxa = document.querySelectorAll("li#itemRoxo")[1];
+        listaRoxa.style.color = "purple";
+        const listaVerde = document.querySelectorAll("li#itemVerde");
+        listaVerde.forEach(item => {
+            item.style.color="green";
+        });
+        const listaAzul = document.querySelectorAll("li#itemAzul");
+        listaAzul.forEach(item => {
+            item.style.color="blue";
+        });
+        
+        const listaItemLaranja = document.querySelector("#listaCompleta2 li:nth-of-type(1)").style.color="orange";
+        const listaItemMarrom = document.querySelector("#listaCompleta2 li:nth-of-type(2)").style.color="brown";
+        const listaItemAmarelo = document.querySelector("#listaCompleta2 li:nth-of-type(3)").style.color="yellow";
+    
+        
+
+    </script>
+</body>
+</html>

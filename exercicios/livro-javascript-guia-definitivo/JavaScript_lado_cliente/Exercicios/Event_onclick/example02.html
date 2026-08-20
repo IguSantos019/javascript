@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clique no link</title>
+</head>
+<body>
+    
+    <a href="https://guide.freecodecamp.org" onclick="meuAlerta()">Clique no link</a>
+
+    <script>
+        function meuAlerta(event){
+            event.preventDefault();
+            alert("Você clicou no link, mas a página não abriu");
+        }
+    </script>
+</body>
+</html>

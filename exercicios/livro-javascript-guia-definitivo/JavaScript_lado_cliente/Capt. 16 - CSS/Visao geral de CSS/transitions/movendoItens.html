@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movendo itens</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+        }
+        .container{
+            padding: 10px;
+            background-color: #e0e0e0;
+            width: 300px;
+            margin-bottom: 25px;
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            background-color: #6359f1;
+            border: none;
+            cursor: pointer;
+            transition: all ease 0.5s;
+        }
+        #item2{
+            transition: all ease-in 0.5s;
+        }
+        #item3{
+            transition: all ease-in-out 0.5s;
+        }
+        #item4{
+            transition: all ease-out 0.5s;
+        }
+        .container:hover > .item{
+            transform: translateX(200px);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="item"></button>
+    </div>
+    <div class="container">
+        <button class="item" id="item2"></button>
+    </div>
+    <div class="container">
+        <button class="item" id="item3"></button>
+    </div>
+    <div class="container">
+        <button class="item" id="item4"></button>
+    </div>
+</body>
+</html>

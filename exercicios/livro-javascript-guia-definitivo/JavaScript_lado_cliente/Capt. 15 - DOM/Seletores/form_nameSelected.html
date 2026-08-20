@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando formulário com o document.nomeDoFormulario</title>
+</head>
+<body>
+    <h1>Selecionando formulário com o document.nomeDoFormulario</h1>
+
+    <form action="" method="get" name="shipping_address">
+        <input type="text"><label for="nameUsuario">Nome de usuario</label><br>
+
+    </form>
+
+    <script>
+        var formShipping_address = document.shipping_address;
+
+        formShipping_address.innerHTML += '<input type="text">';
+    </script>
+</body>
+</html>
