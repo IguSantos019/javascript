@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        body{
+            margin: auto;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            margin-top: 50;
+            font-size: 2.4em;
+        }
+        #content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+        #textCount{
+            font-size: 2em;
+        }
+        .buttons{
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <main id="content">
+        <h1 id="titulo">Contador</h1>
+        <p id="textCount">0</p>
+        <div>
+            <button class="buttons">Aumentar</button>
+            <button class="buttons">Diminuir</button>
+            <button class="buttons">Limpar</button>
+        </div>
+    </main>
+
+    <script>
+        
+        (function ContadorPrincipal(){
+            let contador = 0;
+            document.getElementsByClassName("buttons")[0].addEventListener('click', function(){
+                    contador++
+                    document.getElementById("textCount").textContent = contador
+
+            })
+            document.getElementsByClassName("buttons")[1].addEventListener("click", function(){
+                    contador--
+                    document.getElementById("textCount").textContent = contador
+        
+            })
+            document.getElementsByClassName("buttons")[2].addEventListener("click", function(){
+                    contador = 0
+                    document.getElementById("textCount").textContent = contador
+
+            })
+        }())
+        
+    </script>
+
+
+</body>
+</html>
