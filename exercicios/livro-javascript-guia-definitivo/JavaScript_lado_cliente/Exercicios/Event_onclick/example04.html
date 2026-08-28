@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 04</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #cfcffd;
+        }
+        main#content{
+            text-align: center;
+            margin: 50px 0;
+            background-color: #ffff;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.3em;
+            box-shadow: 1px 0.5px 0.5px rgba(0, 0, 0, 0.149);
+        }
+        h1#titulo{
+            margin-bottom: 15px;
+
+        }
+        input{
+            text-align: center;
+            font-size: 1em;
+            width: 90px;
+
+        }
+        button{
+            margin-left: 20px;
+            font-size: 1.1em;
+            padding: 5px;
+            width: 35px;
+            height: 35px;
+            margin: 20px 2px;
+
+        }
+        button#btnSend, button#reset{
+            width: 100px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            color: white;
+            background-color: rgb(56, 55, 55);
+            border-radius: 5px;
+
+        }
+        button#btnSend:hover, button#reset:hover{
+            background-color: rgb(120, 118, 118);
+            cursor: pointer;
+
+        }
+        button#btnSend:active, button#reset:active{
+            background-color: rgb(56, 55, 55);
+
+        }
+        p{
+            background-color: lightblue;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1.105em;
+
+        }
+    </style>
+</head>
+<body>
+    <main id="content">
+        <h1 id="titulo">Calculadora básica</h1>
+        <label for="number01">1° Número: </label> <input type="number" name="number01" id="txtNum01">
+        <br>
+        <div>
+            <button>+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+        </div>
+        <br>
+        <label for="number02">2° Número: </label><input type="number" name="number02" id="txtNum02">
+        <br>
+        <button id="btnSend">Enviar</button>
+        <button id="reset">Limpar</button>
+        <p id="result">Resultado: </p>
+    </main>
+
+    <script>
+        
+        window.onload = function calculadoraBasica(){
+            const btnReset = document.getElementById("reset");
+            btnReset.onclick = function(){
+                document.querySelectorAll("input")[0].value = null
+                document.querySelectorAll("input")[1].value = null
+
+            }
+            const buttonsOperators = document.querySelector("div");
+            const btnSend = document.getElementById("btnSend");
+
+            
+            buttonsOperators.onclick = function(event){
+                btnSend.onclick = function enviarResultado(){
+                    var num1 = parseFloat(document.querySelectorAll("input")[0].value);
+                    var num2 = parseFloat(document.querySelectorAll("input")[1].value);
+                    var elementoClicado = event.target.textContent;
+
+                    var result = 0;
+                    
+                    if(elementoClicado === "+"){
+                        result = num1 + num2;
+                    }else if(elementoClicado === "-"){
+                        result = num1 - num2;
+                        
+                    }else if(elementoClicado === "*"){
+                        result = num1 * num2;
+                        
+                    }else if(elementoClicado === "/"){
+                        if(num2 === 0){
+                            alert("Não é possível dividir por zero");
+                        }
+                        result = num1 / num2;
+                        
+                    }
+                    
+                    document.getElementById("result").innerHTML = `${num1} ${elementoClicado} ${num2} = ${result}`;
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

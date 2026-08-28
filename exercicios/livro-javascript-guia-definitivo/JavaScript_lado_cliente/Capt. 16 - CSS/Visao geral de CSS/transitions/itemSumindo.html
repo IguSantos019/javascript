@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item sumindo</title>
+    <style>
+        .item{
+            width: 100px; height: 100px;
+            background-color: black;
+            border-radius: 50%;
+            margin: auto;
+            box-shadow: 2px 2px 3px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+
+    </div>
+
+    <script>
+        function fadeOut(e, oncomplete, time){
+            if(typeof e === "string") e = document.getElementById(e);   
+            if(!time) time = 2000;
+
+            var ease = Math.sqrt;
+
+            var start = (new Date()).getTime();
+
+            animate();
+            function animate(){
+                var elapsed = (new Date()).getTime() - start; 
+                var fraction = elapsed/time;
+
+                console.log('fraction - ',  fraction)
+                if(fraction < 1 ){
+                    var opacity = 1 - ease(fraction);
+                    e.style.opacity = String(opacity);
+                    console.log(e.style.opacity = String(opacity))
+                    setTimeout(animate, Math.min(25, time-elapsed))
+                }
+                else{
+                    e.style.opacity = '0';
+                    if(oncomplete) oncomplete(e);
+                }
+            }
+        }
+        const item = document.querySelector(".item");
+        item.addEventListener('click', function(){
+            
+            fadeOut(item);
+        })
+    </script>
+</body>
+</html>

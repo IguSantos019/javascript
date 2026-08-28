@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByClassName()</title>
+    <style>
+        span.warnigs{
+            /*Pode basicamente ser feito assim, por meio de css para apenas mudança de cor ou parecidos*/
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Um texto com várias palavras importantes</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit tempora, hic delectus nobis mollitia velit animi ea eaque praesentium voluptate eos quis. Ipsum laboriosam ea cumque! <span class="warnigs">Itaque</span> facilis nam obcaecati.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione impedit nisi quas eos illo maiores velit ipsa quibusdam officia molestiae ullam eum amet <span class="warnigs">accusantium</span> veritatis, porro doloremque fugit delectus cupiditate.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum <span class="warnigs">iste</span> <span class="warnigs">exercitationem</span> sunt voluptatem fugiat, velit dicta, id perspiciatis maiores minus aliquid nesciunt vel doloremque et reiciendis sit aspernatur delectus necessitatibus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex vero nostrum repellat, ea cumque aperiam optio earum, hic, sapiente perspiciatis? Blanditiis, officia quae dignissimos pariatur consequatur doloremque delectus beatae?
+    </p>
+
+    <script>
+        var warningsInRed = document.getElementsByClassName("warnigs");
+        
+        for(var i = 0; i < warningsInRed.length; i++){
+            warningsInRed[i].style.color = "red";
+        }
+    </script>
+</body>
+</html>

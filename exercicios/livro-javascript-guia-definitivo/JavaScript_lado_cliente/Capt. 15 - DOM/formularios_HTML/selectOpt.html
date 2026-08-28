@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select e options</title>
+</head>
+<body>
+    
+    <form name="form1">
+        <select id="myselect">
+            <option value="item 1">Item 1</option>
+            <option value="item 2">Item 2</option>
+            <option value="item 3">Item 3</option>
+            <option value="item 4">Item 4</option>
+        </select>
+        <button>Enviar</button>
+    </form>
+
+    <script>
+        const form = document.forms.form1;
+
+        var opts = document.querySelector('#myselect');
+
+        var indiceAtual = opts.selectedIndex;
+        opts.selectedIndex = 3
+
+        
+
+    </script>
+</body>
+</html>

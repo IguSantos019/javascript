@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculadora">
+        <div class="calculator_display">0</div>
+        <div class="class_buttons">
+            <button class="operator" data-action="add" style="grid-area: operator-add;">+</button>
+            <button class="operator" data-action="sub" style="grid-area: operator-sub;">-</button>
+            <button class="operator" data-action="mult" style="grid-area: operator-mult;">*</button>
+            <button class="operator" data-action="div" style="grid-area: operator-div;">/</button>
+
+            <button style="grid-area: num-7;">7</button>
+            <button style="grid-area: num-8;">8</button>
+            <button style="grid-area: num-9;">9</button>
+            <button style="grid-area: num-4;">4</button>
+            <button style="grid-area: num-5;">5</button>
+            <button style="grid-area: num-6;">6</button>
+            <button style="grid-area: num-1;">1</button>
+            <button style="grid-area: num-2;">2</button>
+            <button style="grid-area: num-3;">3</button>
+            <button style="grid-area: num-0;">0</button>
+            <button data-action="decimal" style="grid-area: dot;">.</button>
+            <button data-action="clear" style="grid-area: clear;">AC</button>
+            <button class="equal" data-action="calculate" style="grid-area: equal;">=</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

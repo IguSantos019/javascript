@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de diálogo - showModalDialog()</title>
+    <style>
+        #dialog{
+            width: 80vw;
+            height: 50px;
+            text-align: center  ;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(165, 165, 255, 0.823);
+            position: fixed;
+            top: 85%;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <dialog id="dialog">
+        <div>
+            Este site utiliza a tecnologia de cookies para a melhor experiência dos usuários. Clique abaixo se concorda em utilizarmos no seu dispositivo.
+        </div>
+        <div><button id="btnClose">Fechar</button></div>
+    </dialog>
+
+    <h1>Caixa dialog</h1>
+    <p>Um exemplo padrão que utiliza a atualização de cookies para melhorar o site</p>
+    <script>
+        const modal = document.getElementById("dialog");
+        const btnClose = document.getElementById("btnClose");
+        const btnOpen = document.getElementById("btnOpen");
+        
+        //btnOpen.addEventListener( "click", () => {modal.showModal()});
+        btnClose.addEventListener("click", () =>{modal.close()});
+
+        window.onload = () => {modal.showModal()};
+    </script>
+</body>
+</html>

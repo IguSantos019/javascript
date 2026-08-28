@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clique na lista</title>
+</head>
+<body>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+
+    <div id="buttons">
+        <button>*</button>
+        <button>/</button>
+        <button>+</button>
+    </div>
+    <div>
+        <input type="number" name="number1" id="idNumber1">
+        <input type="number" name="number2" id="idNumber2">
+    </div>
+    <p></p>
+    <button id="enviar">enviar</button>
+
+    <script>
+        
+        var lista = document.querySelector("ul");
+
+        lista.addEventListener("click", function(event){
+            alert(event.target.textContent)
+        })
+
+
+        var buttons = document.querySelector("div");
+        var enviar = document.getElementById("enviar");
+        
+        buttons.addEventListener("click", function(event){
+
+            textoNumero1 = document.querySelectorAll("input")[0].value;
+            numero1 = Number(textoNumero1);
+            textonumero2 = document.querySelectorAll("input")[1].value;
+            numero2 = Number(textonumero2);
+            result = 0;
+            enviar.addEventListener("click", enviarConta);
+            function enviarConta(){
+                var elementoClicado = event.target.textContent;
+                
+
+                switch(elementoClicado){
+                    case "*": alert(result = numero1 * numero2)e;
+                    break;
+                    case "+": alert(result = numero1 + numero2);
+                    break;
+                }
+
+            }
+            var p = document.querySelector("p");
+            if(event.target.textContent == "*"){
+                alert("clicou")
+            }else if(event.target.textContent == "/"){
+                alert("clicou divisao");
+            }
+            p.textContent = 1 + event.target.textContent + 6;
+            //alert(event.target.textContent);
+        })
+        
+
+    </script>
+</body>
+</html>

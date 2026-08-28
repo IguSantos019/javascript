@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaqualhe</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw; height: 100vh;
+            box-sizing: border-box;
+        }
+        .item{
+            width: 100px; height: 100px;
+            background-color: lightseagreen;
+            border: 3px solid rgb(15, 91, 87);
+            border-radius: 5px;
+            transform: translate();
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+
+    </div>
+
+    <script>
+        function shake(e, oncomplete, distance, time){
+            if(typeof e === "string") e = document.getElementById(e);
+            if(!time) time = 500;
+            if(!distance) distance = 5;
+
+            var originalStyle = e.style.cssText;
+            e.style.position = "relative";
+            var start = (new Date()).getTime();
+            animate();
+
+            function animate(){
+                var now = (new Date()).getTime();
+                var elapsed = now-start;
+                var fraction = elapsed/time;
+                // console.log(now)
+                // console.log(elapsed)
+                // console.log(fraction)   
+                if(fraction < 1 ){
+                    var x = distance * Math.sin(fraction*4*Math.PI);
+                    console.log(x)
+                    e.style.left = x + "px";
+
+                    var min = Math.min(25, time-elapsed);
+                    //console.log(min)
+                    setTimeout(animate, Math.min(25, time-elapsed));
+                }
+                else{
+                    e.style.cssText = originalStyle;
+                    if(oncomplete) oncomplete(e);
+                }
+            }
+        }
+        const item = document.querySelector('.item');
+
+        shake(item  );
+        item.addEventListener('click', function(){
+        })
+
+
+        // function shake(item, time, distance){
+        //     if(!item) item = document.getElementById(item);
+        //     if(!time) time = 500; //500 milisegundos
+        //     if(!distance) distance = 5; //5px
+             
+        //     var originalStyle = item.style.cssText;
+        //     item.style.position = 'relative';
+        //     var start = (new Date()).getTime();
+            
+        //     function animate(){
+        //         var now = (new Date()).getTime();
+        //         console.log(now-start);
+
+
+                
+        //     }
+        //     animate();
+        // };
+        // var item = document.querySelector('.item');
+        // shake(item);
+    </script>
+</body>
+</html>

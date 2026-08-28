@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout() e setInterval()</title>
+    <style>
+        p {
+            width: 600px;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            margin: 10px 10px ; 
+            width: 200px; 
+            height: 100px; 
+            border-radius: 5px;
+            font-size: 1.3em;
+            
+        }
+        button#buttonStart {
+            background-color: rgba(70, 240, 70, 0.777)
+
+            
+        }
+        button#buttonStop {
+            background-color: rgba(255, 40, 40, 0.808)
+            
+        }
+        button#buttonReset {
+            background-color: rgb(36, 36, 255, 0.705);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Cronômetros</h1>
+    <p>setTimeout() e setInterval() permitem registrar uma função para ser chamada uma vez ou repetidamente, após
+        uma quantidade de tempo especificada.
+    </p>
+    <p>O método setTimeout() do objeto Window agenda a execução de uma função para depois de decorrido um número especificado de milisegundos.
+         setTimeout() retorna um valor que pode ser passado para clearTimeout() a fim de cancelar a execuçao da função agendada.
+    </p>
+    <p>setInterval() é como setTimeout(), exceto que a função especificada é chamada repetidamente em intervalos do número de milisegundos especificado.</p>
+    <p><pre>
+        setInterval(updateClock, 60000);
+    </pre></p>
+
+    <p>Contagem do cronometro abaixo:</p>
+    <p id="contando" style="font-weight: bold;">0</p>
+
+    <hr style="border: 1px solid black;">
+    <h1 style=" text-align: center;">Contagem de segundos</h1>
+    
+    <p id="time" style="width: 98vw; text-align: center; font-size: 2em;">0</p>
+    <div style="text-align: center;">
+        <button id="buttonStart">Iniciar contagem</button>
+        <button id="buttonStop">Parar Contagem</button>
+        <button id="buttonReset">Resetar contagem</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

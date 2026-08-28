@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event.target - Exemplo</title>
+    <style>
+        ul{
+            margin-top: 10px;
+            margin: auto;
+        }
+        li{
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clique em algum item</h1>
+
+    <ul id="lista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <p id="paragrafo"></p>
+    <script>
+        const listaClick = document.getElementById("lista");
+        const teste = document.getElementById("paragrafo");
+        
+        listaClick.addEventListener("click", function(event){
+            teste.innerHTML = event.target.innerHTML;
+        })
+        
+    </script>
+</body>
+</html>

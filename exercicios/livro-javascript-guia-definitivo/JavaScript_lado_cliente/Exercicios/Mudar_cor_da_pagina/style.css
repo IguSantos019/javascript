@@ -1,0 +1,50 @@
+*{
+
+}
+body{
+    width: 95vw;
+    height: 95vh;
+}
+
+#content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+div{
+    text-align: center;
+
+}
+.buttonsCollors{
+    font-size: 2em;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+.buttonsCollors:active{
+    border: 1px solid black;
+}
+#collorBlue:hover{
+    background-color: blue;
+    color: white;
+}
+#collorBlue:active{
+    background-color: darkblue;
+}
+#collorGreen:hover{
+    background-color: green;
+    color: white;
+}
+#collorGreen:active{
+    background-color: darkgreen;
+}
+#collorRed:hover{
+    background-color: red;
+    color: white;
+}
+#collorRed:active{
+    background-color: darkred;
+}
+
+

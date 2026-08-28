@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04</title>
+</head>
+<body>
+    <form name="shipping" method="post" onreset="confirmReset()">
+        <fieldset>
+            <legend>Shipping Method</legend>
+            <label><input type="radio" name="Method" value="1st" >First-class</label>
+            <label><input type="radio" name="Method" value="2day">2-day Air</label>
+            <label><input type="radio" name="Method" value="overnite">Overnight</label>
+        </fieldset>
+        
+        <button type="reset" >Resetar</button>
+    </form>
+    <button>Enviar</button>
+
+    <script>
+        document.querySelectorAll('input')[1].defaultChecked;
+        (()=>{
+            var shipping_method;
+            var methods = document.querySelectorAll('input');
+            methods.forEach(method => {method.addEventListener('click', ()=>{
+                shipping_method = method.value;
+                document.querySelector('button').addEventListener('click', function(){
+                    console.log(shipping_method);
+        
+                })
+    
+            })})
+
+            confirmReset = ()=>{
+                var confirmacao;
+                confirmacao = window.confirm('Voce quer resetar?');
+
+                if(confirmacao === true){
+                    alert('Resetando')
+                }else{
+                    alert('Ok deixa pra lá');
+                }
+            }
+        })();
+
+        </script>
+</body>
+</html>

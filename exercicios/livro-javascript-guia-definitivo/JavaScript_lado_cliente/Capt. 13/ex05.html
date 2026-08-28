@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+</head>
+<body>
+    <h1 id="greeting">Hello, </h1>
+
+    <button id="button1">Click Here!</button>
+    <button id="button2">Click Here after</button>
+    <script>
+        //A maneira certa se de fazer é chamar a rotina de tratamento de evento
+        //dentro dos códigos onde são invocadas funções.
+        //por exemplo:
+
+        window.onload = function(){
+            const greeting = document.getElementById("greeting");
+            greeting.style.fontFamily = "Arial";
+            greeting.innerHTML += "World!";
+
+            document.getElementById("button1").onclick = function(){
+                button1.style.backgroundColor = "red";
+                greeting.innerHTML = "Fuck you!";
+            }
+            document.getElementById("button2").onclick = function(){
+                greeting.innerHTML = "Sorry!";
+                button2.style.backgroundColor = "green";
+                button1.style.backgroundColor = "green";
+            }
+
+        }
+    </script>
+</body>
+</html>

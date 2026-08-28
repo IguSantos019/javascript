@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objeto Navigator</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log(navigator.platform)
+
+        var browser = (function(){
+            var s = navigator.userAgent.toLocaleLowerCase();
+            var match = /(webkit)[ \/]([\w.]+)/.exec(s) || /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(s) || /(msie)([\w.]+)/.exec(s) || !/compatible/.test(s) && /(mozzila)(?:.*? rv:([\w.]+))/.exec(s) || [];
+            return console.log({name: match[1] || "", version: match[2] || "0"})
+        })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toque para mostrar mais</title>
+    <style>
+        .container{
+            display: flex;
+            width: 35%;
+            max-height: 300px;
+            align-items: center;
+            justify-self: center; 
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.426);
+            padding: 20px;
+            overflow: hidden;
+            flex-direction: column;
+            transition: max-height ease-in-out 1s, transform ease 0.8s;       
+        }
+        #content{
+            text-align: justify;
+
+        }
+        .container:hover{
+            cursor: default;
+            max-height: 700px;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis iusto temporibus dolorem vero voluptatem reprehenderit ipsa dolore qui quasi beatae, molestiae in nobis repudiandae velit, tenetur numquam officia ex natus!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci sint rerum nisi illo iure facilis! Odit provident distinctio, quae hic voluptatibus natus molestiae, vel autem, iusto exercitationem perspiciatis suscipit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, rem alias necessitatibus sequi debitis architecto facilis, deleniti iusto laborum magni voluptatibus, cupiditate deserunt pariatur! Dolor debitis eum amet similique? Cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut saepe nam ratione aliquam sed dicta, consequuntur ullam dolores illum minima ab rem culpa fuga incidunt quis magnam molestias quibusdam veritatis?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsum consequuntur quaerat. Accusantium in quo doloribus reiciendis culpa repellendus dolorem repudiandae officia porro, dignissimos quae mollitia dolor voluptatem ratione labore.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident voluptas impedit aliquid eveniet. Eligendi optio voluptate perferendis, itaque ad, culpa dolorem numquam quaerat quisquam ex voluptatum labore provident. Praesentium, assumenda. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quisquam voluptate itaque ullam ipsum sunt dolor iste natus? Ipsa omnis magni in perspiciatis amet veniam sapiente voluptate officia odio necessitatibus!</p>
+        </div>
+    </div>
+    <div class="secondContainer">
+        <div id="secondContent">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repudiandae temporibus possimus, alias corporis aliquam repellat consectetur? Neque exercitationem, consequatur provident fuga molestias voluptatum, ipsum et amet dolorem, cum similique! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia consequatur dignissimos fuga qui ipsa magni illo quam, voluptas ipsam nobis repellat dolorum deserunt a. Assumenda ullam ducimus ex labore ea.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, nulla voluptatibus inventore facilis repellendus tempore aperiam similique autem labore in quia quas fugiat amet ipsum ex beatae? Voluptatem, facere vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate temporibus at culpa vero autem mollitia aspernatur labore nam placeat soluta obcaecati nesciunt, eaque pariatur animi consectetur modi laboriosam, incidunt debitis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nisi ratione ex. Fugiat cupiditate magnam atque quos ut debitis iste necessitatibus accusamus, rem exercitationem unde in explicabo dolorem doloremque molestiae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur optio laudantium, dolorem provident repudiandae atque perspiciatis consequuntur voluptates praesentium illum aperiam itaque fugiat hic minus, tenetur, totam dolore eligendi laborum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod quam, dolor velit cum eveniet eum architecto maxime voluptates sed eos facilis quos ut impedit voluptatibus aut assumenda doloremque at. Quam.</p>
+        </div>
+    </div>
+</body>
+</html>

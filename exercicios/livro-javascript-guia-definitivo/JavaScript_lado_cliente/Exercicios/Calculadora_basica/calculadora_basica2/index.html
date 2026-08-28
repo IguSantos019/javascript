@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora básica 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="content">
+            <h1 id="titulo">Calculadora Básica</h1>
+            <div class="numbers">
+                <input type="number" name="num1" id="idNum1" placeholder="1° Número">
+                <input type="number" name="num2" id="idNum2" placeholder="2° Número">
+            </div>
+            <div class="operators">
+                <button data-operators="add">+</button>
+                <button data-operators="sub">-</button>
+                <button data-operators="mult">*</button>
+                <button data-operators="div">/</button>
+            </div>
+            <button id="calc">Calcular</button>
+            <p id="result">Total: 0</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

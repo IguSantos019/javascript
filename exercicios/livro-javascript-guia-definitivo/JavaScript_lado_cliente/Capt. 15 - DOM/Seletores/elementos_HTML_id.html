@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos pela identificação</title>
+    <style>
+        body{
+            background: linear-gradient(to right, blue, rgb(111, 111, 254));
+        }
+        #boas_vindas{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        #idName{
+            font-size: 1.3em;
+            text-align: center;
+        }
+        #btnEnviar{
+            margin-top: 15px;
+            font-size: 1.3em;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="boas_vindas">
+        <h1 id="tituloBoasVindas">Seja bem-vindo </h1>
+        <h2 id="solicitacaoExcluidaDepois">Por favor coloque seu nome abaixo para agradecermos</h2>
+        <input type="text" name="name" id="idName" autocomplete="name" >
+        <br>
+        <button id="btnEnviar">Enviar</button>
+    </div>
+    <script>
+
+        
+        document.getElementById("btnEnviar").addEventListener("click", function(){
+            var tituloBoasVindas = document.getElementById("tituloBoasVindas");
+            var idName = document.getElementById("idName").value;
+            const solicitacaoExcluidaDepois = document.getElementById("solicitacaoExcluidaDepois");
+            var idNameFinal = idName.charAt(0).toUpperCase() + idName.slice(1).toLowerCase();
+            tituloBoasVindas.innerHTML += idNameFinal;
+            solicitacaoExcluidaDepois.style.display = "none";
+        })
+    </script>
+</body>
+</html>

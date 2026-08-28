@@ -1,0 +1,15 @@
+<button>somar</button>
+<p>valor atual: 0</p>
+
+<script>
+    const button = document.querySelector("button");
+    var p = document.querySelector('p');
+    var soma = 0;
+    
+    button.addEventListener('click', function(){
+        
+        soma++
+        p.innerText = `valor atual: ${soma}`
+    })
+
+</script>
