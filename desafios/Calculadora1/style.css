@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    margin-top:  200px;
+    background-color: gray;
+}
+main{
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+div#showResult{
+    height: 50px;
+    text-align: right;
+    justify-content: center;
+}
+button{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+
+}
+button#equal{
+    position: absolute;
+    left: 56%;
+    height: 215px;
+}

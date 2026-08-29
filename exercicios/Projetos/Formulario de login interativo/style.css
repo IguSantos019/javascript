@@ -1,0 +1,136 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+.containerPai{
+    width: 100%; height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    width: 80%; height: 80vh;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    padding: 20px 20px;
+    background-color: #000000da;
+}
+.esquerda, .direita{
+    width: 50%; height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 35px 0px 0px 35px;
+}
+.esquerda{
+    background-image: linear-gradient(to bottom,rgb(47, 45, 53), rgb(27, 25, 32) );
+    
+    h1{
+        color: #ebeaea;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        position: relative;
+        top: -30px;
+        font-size: 2.4em;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px black;
+    }
+    input{
+        padding: 10px;
+        font-size: 1.1em;
+        border-radius: 25px;
+        border: none;
+        background-color: rgb(46, 45, 51);
+        margin-bottom: 10px;
+        color: white;
+        width: 30vw;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.329);
+        transition: all .3s ease;
+    }
+    input::placeholder{
+        color: #979797;
+    }
+    input:hover{
+        transform: scale(1.05);
+    }
+    input:focus{
+        outline: none;
+    }
+    button{
+        font-size: 1.3em;
+        padding: 10px;
+        width: 30vw; height: 50px;
+        
+        border-radius: 25px;
+        border: none;
+        background-image: linear-gradient(to right, rgb(76, 14, 112) 1%, rgb(147, 71, 190) 60%, rgb(235, 201, 255));
+        color: #000000;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: normal;
+        transition: all .3s ease;
+    }
+    button:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+        box-shadow: 1px 1px 10px #ffffff85;
+    }
+}
+
+.direita{
+    border-radius: 0 35px 35px 0px;
+
+    background-image: linear-gradient(to bottom, #fff, rgba(82, 167, 247, 0.788));
+    .facaCadastro{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        button{
+            padding: 10px;
+            width: 25vw;
+            font-size: 1.2em;
+            border-radius: 25px;
+            border: none;
+            background-image: linear-gradient(to right, #eef5f7 30%, rgba(52, 124, 190, 0.918));
+            transition: all .3s ease;
+        }
+        button:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+            box-shadow: 1px 1px 10px #ffffffde;
+        }
+    }
+    h2{
+        font-size: 2.5em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        position: relative;
+        top: -50px;
+        text-shadow: 1px 1px 1px black;
+
+    }
+    p{
+        text-align: center;
+        font-size: 1.3em;
+        font-family: 'Times New Roman', Times, serif;
+        position: relative;
+        top: -10px;
+        margin-bottom: 10px;
+
+    }
+    
+}
+.facaLogin{
+    position: absolute;
+    display: none;
+}
+
+.formCadastro{
+    position: absolute;
+    display: none;
+}
+
