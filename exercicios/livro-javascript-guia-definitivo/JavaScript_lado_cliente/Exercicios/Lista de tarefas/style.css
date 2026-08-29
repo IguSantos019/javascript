@@ -67,3 +67,31 @@ ul{
     font-size: 1.1em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.buttonsStyle{
+    cursor: pointer;
+    color: #c8c7c7;
+
+    
+}
+.buttonsStyle:hover{
+    background-color: #515050;
+}
+.validacao{
+    color: red;
+    background-color: rgb(252, 168, 168);
+    padding: 10px 5px;
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: none; 
+}
+.validacao.ativo{
+    display: block;
+}
+.listaVazia{
+    font-style: italic;
+    display: none;
+}
+.listaVazia.ativo{
+    display: block;
+}

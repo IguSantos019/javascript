@@ -1,0 +1,42 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+.ativo{
+    opacity: 1;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw; height: 100vh;
+
+}
+img{
+    width: 350px; height: 350px;
+    opacity: 0;
+    position: absolute;
+    transition: all .5s ease;
+}
+div.imagens{
+    width: 350px; height: 350px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.648);
+}
+.botoes{
+    display: flex;
+    gap: 10px;
+}
+button{
+    width: 100px;
+    padding: 10px; 
+    font-size: 1.1em;
+    background-color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: transform .1s ease;
+}
+button:hover{
+    transform: scale(1.03);
+}

@@ -1,0 +1,33 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+.containerPai{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.containerlogin{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(32, 29, 40);
+}
+.containerlogin h1{
+    font-size: 3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 5px;
+    position: relative;
+    top: -40%;
+}
+.containerlogin input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    border: none;
+}
