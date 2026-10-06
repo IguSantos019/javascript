@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .caixa{
+            width: 50px;
+            height: 50px;
+            background-color: lightblue;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="caixa"></div>
+    
+    <script>
+        
+        let caixa = document.querySelector('.caixa');
+
+        let tamanho = 10;
+        caixa.addEventListener('wheel', function(event){
+            
+
+            if(event.wheelDelta < 0){
+                tamanho += 10;
+            }else{
+                tamanho = Math.max(20, tamanho - 10)
+            }
+
+            caixa.style.width = tamanho + 'px';
+            caixa.style.height = tamanho + 'px';
+
+        })
+
+
+    </script>
+</body>
+</html>

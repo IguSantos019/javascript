@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arraste e solte</title>
+    <style>
+        .arrasto{
+            width: 150px;
+            height: 150px;
+            background-color: slateblue;
+        }
+        .destinoArrasto{
+            width: 300px;
+            height: 300px;
+            border: 1px dashed black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-family: cursive;
+            margin-top: 50px;
+            margin-left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="arrasto" draggable="true"></div>
+    <div class="destinoArrasto">Solte aqui</div>
+
+    <script>
+        const elemento = document.querySelector('.arrasto');
+        const destinoArrasto = document.querySelector('.destinoArrasto');
+
+        elemento.addEventListener('dragstart', e =>{
+            e.dataTransfet.setData('text/plain', e.target.id);
+        })
+        destinoArrasto.addEventListener('dragover', e =>{
+            e.preventDefault();
+        })
+        destinoArrasto.addEventListener('drop', e => {
+            e.preventDefault();
+            const id = e.dataTrasnfer.getData('text/plain');
+            const draggedElement = document.getElementById(id);
+            destinoArrasto.appendChild(draggedElement);
+        })
+
+    </script>
+</body>
+</html>

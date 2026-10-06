@@ -1,0 +1,177 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Nexa Light';
+
+}
+body{
+    background-color: rgb(20, 21, 29);
+}
+@font-face {
+    font-family: 'Nexa Light';
+    src: url(../assets/Nexa-ExtraLight.ttf);
+}
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url(../assets/Nexa-Heavy.ttf);
+}
+
+.containerPai{
+    display: flex;
+    width: 100%; height: 100vh;
+    align-items: center; justify-content: center;
+}
+.card{
+    display: flex;
+    width: 90vw; height: 90vh;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px;
+}
+ input{
+    padding: 10px;
+    font-size: 1.1em;
+    width: 22vw;
+    background-color: #ffffff00;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.627);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    transition: all .3s ease;
+}
+button{
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.44), rgba(10, 194, 255, 0.21) ,#ffffff54);
+    margin-top: 13px;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 20vw;
+    transition: all .3s ease;
+}
+button:hover{
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+input:hover{
+    transform: scale(1.02);
+} 
+
+.esquerda, .direita{
+    width: 50%;
+    background-image: linear-gradient(to bottom, rgb(56, 56, 56), rgb(29, 30, 41)); 
+    z-index: 1;
+
+}
+h2{
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 3em;
+    color: #fff;
+    font-family: 'Nexa Bold';
+}
+p{
+    color: #fff;
+}
+.esquerda{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.cadastrar-se, .facaLoginbtn, .fazerCadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+}
+
+.direita{
+    display: flex;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    background-color: #fff;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    
+        h2, p{
+            color: #000000;
+        }
+        p{
+            font-size: 1.2em;
+        }
+        button{
+            padding: 14px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 30px;
+            width: 27vw;
+            margin-top: 22px;
+            transition: all .4s ease;
+
+        }
+        button:hover{
+            background-color: rgba(255, 255, 255, 0.562);
+            cursor: pointer;
+            transform: scale(1.02);
+            transform: translateY(-2px);
+        }
+    }
+
+.fazerCadastro{
+    h2{
+        color: #fff;
+    }
+
+}
+.facaLoginbtn{
+    h2, p{
+        color: #000000;
+    }
+}
+
+
+.card::after{
+    width: 45%; height: 90vh;
+    position: absolute;
+    content: '';
+    background-image: linear-gradient(to bottom, #fff,rgba(0, 0, 255, 0.903));
+    z-index: 0;
+}
+
+.facaLoginbtn, .fazerCadastro{
+    position: absolute;
+}
+
+.card.loginAtivo .facaLoginbtn{
+    opacity: 0;
+    pointer-events: none;
+}
+.card.loginAtivo .fazerCadastro{
+    opacity: 0;
+    pointer-events: none;
+}
+.card.loginAtivo::after{
+    transform: translate(100%);
+}
+
+
+/*
+    CADASTRO ATIVO
+*/
+
+
+.card.cadastroAtivo .fazerLogin{
+    opacity: 0;
+    pointer-events: none;
+}
+.card.cadastroAtivo .cadastrar-se{
+    opacity: 0;
+    pointer-events: none;
+}
+
+

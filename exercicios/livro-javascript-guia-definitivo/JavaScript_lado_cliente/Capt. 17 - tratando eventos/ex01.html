@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evento false em um submit</title>
+</head>
+<body>
+    <form class="form">
+        <input type="text" name="inpname">
+        <input type="password" name="inptPass">
+        <button type="submit">a</button>
+    </form>
+    <script>
+        const form = document.querySelector('.form')
+
+        form.querySelector('button').addEventListener('click', function(){},false)
+
+        
+    </script>
+</body>
+</html>

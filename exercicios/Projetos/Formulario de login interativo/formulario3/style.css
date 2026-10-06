@@ -1,0 +1,95 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+}
+.containerPai{
+    display: flex;
+    width: 100vw; height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: 30vw;
+    background-color: #2b2831;
+    padding: 24px 19px;
+    border-radius: 10px;
+
+}
+.AbasLogin-Cadastro{
+    display: flex;
+    button{
+        padding: 10px;
+        font-size: 1.3em;
+        width: 100%;
+        background-color: rgb(243, 236, 236);
+        border: none;        
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.433);
+        margin-bottom: 15px;
+    }
+    
+}
+.areaLogin, .areaCadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.areaLogin{
+    display: none;
+    button{
+        margin: auto;
+        position: relative;
+        top: 10px;
+        border: none;
+        width: 21vw;
+        margin-bottom: 18px
+    }
+}
+.areaCadastro{
+    display: none;
+    button{
+        width: 21vw;
+        border: none;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.323);
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+h2{
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 17px;
+    text-align: center;
+    color: #fff;
+}
+input{
+    padding: 10px;
+    font-size: 1.1em;
+    border: none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.78);
+    background-color: #ffffff00;
+    color: #fff;
+}
+input::placeholder{
+    color: #ffffff56;
+}
+button{
+    margin-top: 14px;
+    padding: 10px;
+    font-size: 1.2em;
+    transition: all .3s ease;
+}
+button:hover{
+    background-color: #b8b6bb;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.ativo{
+    display: flex;
+}

@@ -1,0 +1,128 @@
+
+@import url("https://use.typekit.net/iso8izn.css");
+
+@font-face{
+    font-family: "montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    src: url("https://use.typekit.net/iso8izn.css");
+}
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    overflow: hidden;
+}
+.progress-container{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 500px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    font-weight: bold;
+    font-style: normal;
+}
+small{
+    position: absolute;
+    top: 35px;
+    left: -1px;
+    width: 45px;
+    opacity: 0;
+}
+.buttons{
+    margin-top: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 22px;
+}
+button{
+    font-size: 1.3em;
+    width: 70px;
+    height: 45px;
+    border-radius: 13px;
+    border: none;
+    outline: none;
+    background-color: slateblue;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.296);
+    margin: 7px;
+    i{
+        color: #fff;
+
+    }
+}
+button:disabled{
+    background-color: rgba(202, 196, 240, 0.533);
+}
+button:hover{
+    cursor: pointer;
+}
+button:active{
+    transform: scale(0.95);
+}
+i, small{
+    color: #0000006d;
+}
+
+hr{
+    position: absolute;
+    width: 500px;
+    height: 5px;
+    top: 50%;
+    z-index: -1;
+}
+hr.linhaCinza{
+    background-color: rgb(168, 168, 168);
+}
+hr.linhaVerde{
+    position: absolute;
+    left: -500px;
+    background-color: green;
+    transition: all 1s ease;
+}
+
+
+.step{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid rgba(0, 0, 0, 0.458);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: border-color 1.5s;
+}
+.step.checked{
+    
+    color: green;
+    border-color: green;
+    small{
+        transition: opacity 1s;
+        color: green;
+        opacity: 1;
+    }
+    i.fa-solid.fa-times{
+        display: none;
+    }
+
+}
+.step.checked::before{
+    font-family: 'Font Awesome 7 free';
+    font-weight: 900;
+    content: "\f00c";
+}  
+
+

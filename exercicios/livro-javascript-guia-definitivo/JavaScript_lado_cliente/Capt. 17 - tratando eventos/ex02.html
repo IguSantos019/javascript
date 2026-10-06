@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: lightblue;
+            padding: 5px;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8em;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div>😁</div>
+
+
+    <script>
+        const div = document.querySelector('div');
+        const pixelQuant = 10;
+        var y = 0;
+        var x = 0;
+
+        document.addEventListener('keydown', function(event){
+            console.log(event.key);
+
+            if(event.key.startsWith('Arrow')){
+
+                switch(event.key){
+                    case 'ArrowRight': div.style.right += pixelQuant;
+                }
+            }
+        })
+        
+
+    </script>
+</body>
+</html>

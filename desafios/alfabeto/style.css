@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+    position: relative;
+}
+.caixa{
+    width: 500px;
+    height: 300px;
+    background-color: rgb(82, 137, 155);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.386);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 34px   ;
+}
+.alfabeto{
+    padding: 10px;
+    background-color: rgb(196, 196, 246);
+    border-radius: 10px;
+
+}
+input{
+    font-size: 1.4em;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    
+}
+input::placeholder{
+    text-align: center;
+}
+button{
+    font-size: 1.4em;
+    padding: 9px;
+    border-radius: 10px;
+    border: none;
+    width: 130px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(202, 202, 249);
+    
+}
+.escondido{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    font-size: 1.6em;
+    top: -500px;
+    padding: 9px;
+    background-color: rgb(251, 159, 164);
+    font-family: fantasy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+    border: 2px solid darkred;
+    color: red;
+}
+.validacaoAtivo{
+    width: 350px;
+    height: 140px;
+    transform: translateY(615px);
+    transition: all 1s ease;
+}

@@ -1,0 +1,45 @@
+<p>40</p>
+<button>click</button>
+<button class="dois">pare</button>
+<button class="reset">Reset</button>
+
+<script>
+    document.querySelector('button').addEventListener('click', function(){
+        
+        iniciar();
+        
+    })
+    document.querySelector('.dois').addEventListener('click', function(){
+        pausar();
+    })
+    document.querySelector('.reset').addEventListener('click', function(){
+        document.querySelector('p').innerHTML = 0;
+    })
+
+
+    let contador = 0;
+    let intervaloID = null;
+
+function iniciar() {
+  // Evita criar múltiplos intervalos se já estiver rodando
+  if (intervaloID !== null) return;
+
+  intervaloID = setInterval(() => {
+    contador++;
+    console.log("Valor atual:", contador);
+  }, 1000);
+}
+
+function pausar() {
+  // Para o setInterval, mas a variável 'contador' continua com o valor atual
+  clearInterval(intervaloID);
+  intervaloID = null; // Libera a referência para poder reiniciar depois
+}
+
+function continuar() {
+  // Retoma exatamente de onde parou
+  iniciar();
+}
+
+    
+</script>

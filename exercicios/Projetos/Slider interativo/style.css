@@ -1,0 +1,13 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+.containerPai{
+    display: flex;
+    align-items: center; justify-content: center;
+    width: 100vw; height: 100vh;
+}
+.card{
+    width: 65vw; height: 80vh;
+    border: 1px solid black;
+
+}

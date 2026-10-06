@@ -11,10 +11,8 @@ bntProx.addEventListener('click', function(){
     //pegar as imagens
     document.querySelector('img.ativo').classList.remove('ativo');
     
-    if(contador < 2){
+    if(contador < listaImagens.length - 1){
         contador++
-    }else{
-        contador = 0;
     }
     
     // listaImagens[contador - 1].classList.remove('ativo');
@@ -27,8 +25,6 @@ btnAnt.addEventListener('click', function(){
     
     if(contador > 0){
         contador--;
-    }else{
-        contador = 2;
     }
     // listaImagens[contador + 1].classList.remove('ativo');
     listaImagens[contador].classList.add('ativo');

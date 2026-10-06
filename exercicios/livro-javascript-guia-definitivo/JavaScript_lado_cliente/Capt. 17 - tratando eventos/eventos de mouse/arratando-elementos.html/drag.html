@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arraste o item</title>
+    <script src="drag-script.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 250px;
+            height: 250px;
+            background-color: slateblue;
+            border: 2px solid black;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.773);
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div style="background-color: white; border-bottom: dotted black; padding: 7px; text-align: center;" onmousedown="drag(this.parentNode, event)">Arraste Aqui</div>
+        <p>Entre o céu e a terra sou o mais honrado</p>
+    </div>
+
+</body>
+</html>

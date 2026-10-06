@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(200deg, #e6e3e3 35%, #000000c5);
+}
+.container{
+    position: relative;
+    overflow: hidden;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    position: relative;
+    overflow: hidden;
+}
+h1{
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+p{
+    text-align: center;
+    font-size: 2.3em;
+}
+hr{
+    width: 400px;
+    height: 9px;
+    background-color: #fff;
+    border-radius: 5px;
+
+}
+.hr-front{
+
+}
+.hr-back{
+    position: relative;
+    top: -43px;
+    height: 10px;
+    background-color: rgb(176, 49, 3);
+    left: -399px;
+}
+.hr-back.ativa{
+    transition: transform 3s linear;
+    transform: translateX(400px);
+}

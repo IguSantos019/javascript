@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <button class="btn">Botao +</button>
+    <p class="counter">0</p>
+
+    <script>
+        var counter = 0;
+        const btn = document.querySelector('.btn');
+        function somar(){
+            counter++
+            document.querySelector('.counter').innerHTML = counter;
+            if(counter == 10){
+                btn.disabled = true;
+                btn.removeEventListener('click', somar);
+            }
+        }
+        btn.addEventListener('click', somar)
+        console.log(btn.getAttributeNames());
+        
+        window.addEventListener('mousemove', verificarSaidaMouse);
+
+            function verificarSaidaMouse(event){
+                var alertResp = false;
+                if(event.clientY <= 1){
+                    alertResp = true;
+                }
+                
+                if(alertResp == true){
+                    let confirmacao = window.confirm('Quer sair?')
+                    if(confirmacao){
+                        console.log('Usuario clicou em OK');
+                        window.removeEventListener('mousemove', verificarSaidaMouse);
+                    }else{
+                        console.log('Usuario clicou em Cancelar');
+                    }
+                }
+
+            }
+
+    </script>
+</body>
+</html>

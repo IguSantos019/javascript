@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Progress</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-container">
+            <hr class="linhaCinza">
+            <hr class="linhaVerde">
+            <div class="step checked">
+                <small>Start</small>
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-times"></i>
+                <small>Step 1</small>
+                
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-times"></i>
+                <small>Step 2</small>
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-times"></i>
+                <small>Step 3</small>
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-times"></i>
+                <small>Final</small>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev" disabled><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="next">  <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+</body>
+</html>

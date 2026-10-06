@@ -1,0 +1,27 @@
+<!-- O container pai precisa ter posicionamento (ex: relative) -->
+<div id="caixa-pai" style="position: relative; width: 300px; height: 150px; background-color: #f0f0f0; padding: 20px; margin-left: 50px;">
+  
+  <!-- O elemento filho que vamos medir -->
+  <button id="meu-botao" style="position: absolute; left: 55px; top: 40px; padding: 10px 20px; background-color: #007bff; color: white; border: none;">
+    Clique Aqui
+  </button>
+
+</div>
+
+<p id="resultado" style="font-weight: bold; margin-top: 15px; color: #333;"></p>
+
+<script>
+    // Seleciona o botão e o parágrafo de resultado
+const botao = document.getElementById('meu-botao');
+const resultado = document.getElementById('resultado');
+
+// Captura o valor de offsetLeft
+const distanciaEsquerda = botao.offsetLeft;
+
+// Exibe o valor na tela
+resultado.innerText = `O botão está a ${distanciaEsquerda} pixels de distância da borda esquerda do seu elemento pai.`;
+resultado.innerText += `${botao.offsetTop}`
+// Exibe também no console para verificação
+console.log("OffsetLeft do botão:", distanciaEsquerda); // Saída: 45
+
+</script>

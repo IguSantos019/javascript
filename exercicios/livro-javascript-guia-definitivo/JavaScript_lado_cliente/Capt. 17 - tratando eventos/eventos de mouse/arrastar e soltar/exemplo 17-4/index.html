@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../funcao-whenReady.js"></script>
+    <script src="script.js" async></script>
+    <style>
+        #clock{
+            font: bold 24pt sans;
+            background: #ddf;
+            padding: 10px;
+            border: 2px solid black; border-radius: 10px;
+        }
+        textarea{
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .container{
+            position: relative;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Drag timestamps from the clock</h1>
+    <span id="clock" draggable="true">00:00</span>
+    <br>
+    <div class="container"><textarea cols="60" rows="20"></textarea></div>
+</body>
+</html>
