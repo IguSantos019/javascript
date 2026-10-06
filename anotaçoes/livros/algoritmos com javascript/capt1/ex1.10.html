@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo por pessoa</title>
+</head>
+<body>
+    <script>
+    const valorDaConta = Number(prompt('Quanto deu o seu jantar?'));
+    const gorjeta = 0.10;
+    const valorDaGorjeta = valorDaConta * gorjeta;
+    const valorTotal = valorDaConta + valorDaGorjeta;
+        alert('Sua conta deu R$' + valorDaConta);
+    const pessoas = Number(prompt("Vocês estão em quantas pessoas?"));
+    const valorPorPessoa = parseFloat(valorTotal / pessoas).toFixed(2);
+
+        alert(`Valor da conta: R$${valorTotal} com a gorjeta inclusa.\n 
+            Número de pessoas: ${pessoas}\n
+            Valor por pessoa: R$${valorPorPessoa}
+        `)
+
+
+    </script>
+</body>
+</html>
