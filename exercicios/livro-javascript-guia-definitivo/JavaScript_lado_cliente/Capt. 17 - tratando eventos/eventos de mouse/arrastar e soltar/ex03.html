@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 3</title>
+    <style> 
+    body{
+        display: flex;
+         align-items: center;
+         justify-content: center;
+        gap: 35px;
+    }
+        .container, .soltura, .arrasto{
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            border: 2px solid black ;
+        }
+        .arrasto{
+            background-color: bisque;
+            cursor: pointer;
+            border: none;
+        }
+        .itemSobreposto{
+            border: 2px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <div class="arrasto" draggable="true"></div>
+    </div>
+    <div class="soltura" dropzone="copy"></div>
+
+    <script>
+        const arrasto = document.querySelector(".arrasto");
+        const soltura = document.querySelector(".soltura");
+       soltura.ondragenter = function(e){
+            e.preventDefault();
+       }
+        
+    </script>
+</body>
+</html>
