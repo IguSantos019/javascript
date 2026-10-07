@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 01</title>
+</head>
+<body>
+    <p>Texto de exemplo</p>
+    <script>
+        
+        let p1 = '01'
+        let p2 = 'igor silva'
+        
+        if(/[a-z]/.test(p1)){
+            console.log('tem letra')
+        }else{
+            console.log('não tem letra')
+        }
+        
+        if(/[0-9]/.test(p2)){
+            console.log('tem número')
+        }else{
+            console.log('não tem número')
+        }
+        
+        p2 = 'igor silva'
+        if(/\s/.test(p2)){
+            console.log('tem espaco')
+        }else{
+            console.log('nao tem espaco')
+
+        }
+        let email1 = 'igor@gmail.com';
+        let email2 = 'igor@outlook.com';
+        const regEmail = /\b@gmail.com\b/;
+        const regOutlook = /\b@outlook.com\b/;
+
+        if(regEmail.test(email1)){
+            console.log('gmail valido')
+        }else{
+            console.log('gmail invalido')
+        }
+        if(regOutlook.test(email2)){
+            console.log('email outlook valido')
+        }else{
+            console.log('email outlook invalido')
+
+        }
+
+        let tell1 = "1196720111";
+
+
+        if(/\d\d\d\d\d\d\d\d\d\d\d/.test(tell1)){
+            console.log('tem 11 numeros');
+        }
+    </script>
+</body>
+</html>
