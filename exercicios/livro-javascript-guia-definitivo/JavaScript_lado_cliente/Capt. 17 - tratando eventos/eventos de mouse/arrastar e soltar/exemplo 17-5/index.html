@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 17-5</title>
-    <script src="script.js" async></script>
+  <meta charset="UTF-8">
+  <title>Exemplo Drag and Drop</title>
+  <style>
+    ul.dnd {
+      border: 2px dashed #ccc;
+      min-height: 100px;
+      padding: 10px;
+      list-style-type: none;
+      width: 200px;
+      float: left;
+      margin-right: 20px;
+    }
+    li {
+      background: #f0f0f0;
+      margin: 5px 0;
+      padding: 8px;
+      cursor: grab;
+      border: 1px solid #ddd;
+    }
+    /* Estilo acionado quando um item é arrastado sobre a lista */
+    ul.droppable {
+      border-color: #4CAF50;
+      background-color: #e8f5e9;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <h2>Lista A</h2>
+  <ul class="dnd">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h2>Lista B</h2>
+  <ul class="dnd">
+    <li>Item 4</li>
+  </ul>
+
+  <!-- Importante: inclua o script no final do body -->
+  <script src="script.js"></script>
 </body>
 </html>

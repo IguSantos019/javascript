@@ -37,7 +37,17 @@
         const arrasto = document.querySelector(".arrasto");
         const soltura = document.querySelector(".soltura");
        soltura.ondragenter = function(e){
+            
+       }
+       soltura.ondragover = function(e){
+            e = e || window.event;
             e.preventDefault();
+       }
+       sotura.ondragleave = function(e){
+
+       }
+       soltura.ondrop = function(){
+            soltura.appendChild(arrasto);
        }
         
     </script>
