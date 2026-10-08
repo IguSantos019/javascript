@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 5px;
+    background-color: rgba(235, 235, 235, 0.74);
+}
+.container{
+    background-color: #fff;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.linhas{
+    display: flex;
+}
+
+button{
+    padding: 30px;
+    font-size: 2em;
+    border: none;
+    background-color: #fff;
+}
+#linha01, #linha02, #linha03{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    
+}
+#linha01, #linha02{
+    border-bottom: 2px solid black;
+}
+.btnBordaDir{
+    border-right: 2px solid black;
+}
+.btnBordaEsq{
+    border-left: 2px solid black;
+
+}
