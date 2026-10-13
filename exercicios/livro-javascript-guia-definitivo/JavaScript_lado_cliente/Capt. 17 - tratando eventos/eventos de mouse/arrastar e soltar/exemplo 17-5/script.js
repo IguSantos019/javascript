@@ -13,7 +13,7 @@
             e = e || window.event;
             var from = e.relatedTarget;
             entered++
-            if((from && !ischild(from, list)) || entered ==1){
+            if((from && !ischild(from, list)) || entered == 1){
                 
                 var dt = e.dataTransfer;
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('mousemove', verificarSaida)
+        function verificarSaida(e){
+            e = e || window.event;
+            let mouseY = e.clientY;
+            var alert = false;
+
+            if(mouseY <= 3){
+                alert = true;
+            }
+            if(alert == true){
+                let confirma = window.confirm('Quer sair?');
+                if(confirma == true){
+                    console.log('Usuario quer sair')
+                    window.removeEventListener('mousemove', verificarSaida);
+                }else{
+                    console.log('usuario vai ficar');
+                }
+                
+            }
+
+
+        }  
+    </script>
+</body>
+</html>

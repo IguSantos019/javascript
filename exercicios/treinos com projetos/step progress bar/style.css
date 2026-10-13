@@ -21,7 +21,7 @@ body{
     display: flex;
     position: relative;
     justify-content: space-between;
-    width: 500px;
+    width: 500px;   
 }
 *{
     margin: 0;
@@ -78,14 +78,12 @@ hr{
     position: absolute;
     width: 500px;
     height: 5px;
-    top: 50%;
-    z-index: -1;
-}
+    top: 50%;   
+    }
 hr.linhaCinza{
     background-color: rgb(168, 168, 168);
 }
 hr.linhaVerde{
-    position: absolute;
     left: -500px;
     background-color: green;
     transition: all 1s ease;

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn01">Clique apenas uma vez</button>
+    <button class="btn02">Clique mais vezes</button>
+    <script>
+        const button01 = document.querySelector('.btn01');
+        button01.addEventListener('click', cliqueUmaVez);
+        function cliqueUmaVez(){
+            document.body.style.backgroundColor = 'black';
+            button01.disabled = true;
+            button01.textContent = 'Já clicou';
+            button01.removeEventListener('click', cliqueUmaVez);
+        }
+
+        const button02 = document.querySelector('.btn02');
+        button02.addEventListener('click', cliqueBastante);
+        var cont = 0;
+        function cliqueBastante(){
+            cont++
+            console.log(cont);
+            if(cont % 2 == 0){
+                document.body.style.backgroundColor = '#000'
+            }else{
+                document.body.style.backgroundColor = '#fff'
+                
+            }
+        }
+
+
+    </script>
+</body>
+</html>

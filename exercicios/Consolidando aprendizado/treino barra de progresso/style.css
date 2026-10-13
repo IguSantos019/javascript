@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+}
+.containerPai{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+}
+.containerSteps{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    overflow: hidden;
+    min-width: 500px;
+}
+.containerSteps{
+}
+.step{
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.458);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 0, 0, 0.445);
+    position: relative;
+    background-color: #fff;
+}
+hr{
+    position: absolute;
+    width: 800px;
+    height: 5px;
+    top: 50%;
+    background-color: rgba(168, 168, 168);
+}
+.backHr{
+    background-color: green;
+    left: -800px;
+    transition: all 1s ease ;
+}
+
+.containerBtns{
+    display: flex;
+    gap: 21px;
+}
+.btn{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 80px;
+    background-color: rgb(43, 43, 81);
+    color: #fff;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+.btn:active{
+    transform: translateY(-2px);
+    transition: all .1s;
+}
+.btn:disabled{
+    background-color: rgba(185, 185, 185, 0.462);
+    cursor: not-allowed;
+}
+.btn:disabled:active{
+    transform: none;
+}
+
+.checked{
+    border: 4px solid green;
+    color: green;
+    transition: border-color 1s ease;
+    i{
+        display: none;
+    }
+}
+/*Para colocar codigos unicode do font awesome precisa colocar font-family: Font Awesome 7 free e font-weight 900*/
+.checked::before{
+    content: "\f00c";
+    font-family: "Font Awesome 7 free";
+    font-weight: 900;
+}
