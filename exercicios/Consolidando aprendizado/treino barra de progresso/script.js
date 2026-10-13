@@ -4,10 +4,7 @@
 
     var contador = 0;
     
-    var pixelsHr = 100;
-    if(document.querySelector('.containerSteps').clientWidth <= 500){
-        pixelsHr = 60;
-    }
+    var pixelsHr = 125;
     var backHr = document.querySelector(".backHr");
     
     var step = document.querySelectorAll('.step')
