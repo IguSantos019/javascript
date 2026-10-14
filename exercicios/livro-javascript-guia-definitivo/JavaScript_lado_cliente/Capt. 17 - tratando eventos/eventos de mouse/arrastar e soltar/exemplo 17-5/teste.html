@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            padding: 5px;
+            width: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div>
+        <button>Criar</button>
+        <ul class="lista">
+            <li>item 1</li>
+        </ul>
+    </div>
+
+    <script>
+        const button = document.querySelector('button');
+        
+        var cont = 0;
+        button.addEventListener('click', function(){
+            var ul = document.querySelector('ul');
+            
+            var item = document.createElement('li');
+            const txtItem = document.createTextNode('Add +1');
+            item.appendChild(txtItem);
+            ul.appendChild(item);
+
+        });
+        
+        
+        
+    </script>
+</body>
+</html>

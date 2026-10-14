@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de listas de arrastar e soltar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="script.js" async></script>
+</head>
+<body>
+    <div class="container">
+        <div class="lista" id="lista01">
+            <h1 contenteditable="true">Tarefas para hoje</h1>
+            <hr>
+            <button><i class="fa-solid fa-plus"></i></button>
+            <ul class="dnd">
+
+            </ul>
+        </div>
+        <div class="lista" id="lista02">
+            <h1>Tarefas para amanhã</h1>
+            <ul class="dnd"></ul>
+            
+        </div>
+        <div class="lista" id="lista03">
+            <h1>Tarefas sem data</h1>
+            <ul class="dnd"></ul>
+
+        </div>
+    </div>
+</body>
+</html>
