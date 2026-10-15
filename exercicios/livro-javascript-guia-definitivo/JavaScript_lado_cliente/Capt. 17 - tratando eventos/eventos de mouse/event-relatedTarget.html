@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event.relatedTarget</title>
+    <style>
+        body{
+            display: flex;
+            width: 100vw;
+            justify-content: center;
+        }
+        .container{
+            width: 200px; height: 200px;
+            border: 1px solid black;
+            background-color: rgb(53, 53, 250);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="div01"></div>
+    <div class="container" id="div02"></div>
+
+    <script>
+        (function(){
+            const divs = document.querySelectorAll('.container');
+
+            divs.forEach(div => {
+                // div.addEventListener('mouseenter', function(e){
+                //     var relatedTarget = e.relatedTarget;
+                //     if(relatedTarget == document.body){
+                //         relatedTarget = 'body';
+                //     }
+                //     console.log('Mouse saiu de ' + relatedTarget);
+                // })
+
+                div.addEventListener('mouseenter', function(e){
+                    var relatedTarget = e.relatedTarget;
+                    // if(relatedTarget.tagName){
+                    //     relatedTarget = relatedTarget.tagName
+                    // }
+                    // if(relatedTarget.id){
+                    //     var relatedTargetId = relatedTarget.id;
+                    // }else{
+                    //     relatedTargetId = null;
+                    // }
+                    if(relatedTarget === null){
+                        relatedTarget = 'Fora da janela';
+                    }
+
+                    
+                    console.log('saiu de ' + relatedTarget.tagName + ' id: ' + relatedTarget.id)
+                    console.log('entrou no elemento ' + e.target.id);
+                })                 
+            })
+        })();
+
+    </script>
+</body>
+</html>
