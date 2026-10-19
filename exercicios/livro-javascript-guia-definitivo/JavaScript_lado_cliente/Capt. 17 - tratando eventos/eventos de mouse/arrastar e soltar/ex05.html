@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 05</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            width: 700px;
+            height: 400px;
+        }
+        .coluna{
+            display: flex;
+            background-color: slateblue;
+            padding: 14px;
+            width: 220px;
+            border-radius: 15px;
+        }   
+        .lista{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        li{
+            list-style-type: none;
+            background-color: #ffffffec;
+            padding: 22px;
+            width: 95%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em;
+            font-family: cursive;
+            cursor: pointer;
+        }
+        .dragging{
+            opacity: .5;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="coluna">
+            <ul class="lista dnd">
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <ul class="lista dnd">
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <ul class="lista dnd">
+                <li>Item 5</li>
+                <li>Item 6</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        // const listas = document.querySelectorAll('ul');
+        // listas.forEach(ul => {
+        //     var items = ul.querySelectorAll('li');
+
+        //     items.forEach(item => {
+        //         item.draggable = true;
+                
+        //         item.addEventListener('dragstart', function(){
+        //             item.classList.add('dragging');
+        //         })
+
+        //         ul.addEventListener('dragover', function(e){
+        //             e.preventDefault();
+        //             const dragging = document.querySelector('.dragging');
+        //             const applyAfter = getNewPosition(item, e.clientY);
+
+        //             if(applyAfter){
+        //                 applyAfter.insertAdjacentElement("afterend", dragging);
+        //             }else{
+        //                 item.prepend(ul);
+        //             }
+        //         })
+        //         function getNewPosition(ul, posY){
+        //             let cards = ul.querySelector('li:not(.dragging)');
+        //             let result;
+        //             console.log(cards)
+        //             for(refer_card of cards){
+        //                 const box = refer_card.getBoundingClientRect();
+        //                 const boxCenterY = box.y + box.height / 2;
+        //                 if(posY >= boxCenterY) result = refer_card;
+        //             }
+        //             return result;
+        //         }
+
+
+        //         item.addEventListener('dragend', function(){
+        //             item.classList.remove('dragging');
+        //         })
+                
+
+        //     })
+
+        // })
+        
+        // document.addEventListener('dragstart', function(e){
+        //     e.target.classList.add('dragging');
+        // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const colunas = document.querySelectorAll('ul');
+        const regexp = /\bdnd\b/;
+
+        for(var i = 0; i < colunas.length; i++){
+            if(regexp.test(colunas[i].className)){
+                dnd(colunas[i]);
+            }
+        }
+
+        function dnd(colunas){
+            
+            var items = colunas.querySelectorAll('li');
+            for(var i = 0; i < items.length; i++){
+                items[i].draggable = true;
+            }
+            colunas.ondragstart = function(e){
+                var target = e.target;
+                var dt = e.dataTransfer;
+                dt.setData('Text', target.innerText || target.textContent);
+                dt.effectAllowed = 'move';
+
+                target.classList.add('dragging');
+                //console.log(target.classList);
+            }
+
+            colunas.ondragover = function(e){
+                var target = e.target;
+                e.preventDefault();
+
+                
+
+            }
+
+            colunas.ondrop = function(e){
+                var target = e.target;
+                var dt = e.dataTransfer;
+                var text = dt.getData('text');
+
+                if(text){
+                    var li = document.createElement("li");
+                    var txt = document.createTextNode(text);
+                    li.appendChild(txt);
+                    colunas.appendChild(li);
+                    li.draggable = true;
+                }
+            }
+            colunas.ondragend = function(e){
+                var target = e.target;
+                target.classList.remove('dragging');
+                if(e.dataTransfer.dropEffect = 'move'){
+                    target.parentNode.removeChild(target);
+                }
+
+            }
+        }
+
+    </script>
+</body>
+</html>

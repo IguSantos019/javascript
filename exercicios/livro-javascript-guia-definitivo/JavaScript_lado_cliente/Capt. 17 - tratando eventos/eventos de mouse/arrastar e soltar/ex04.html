@@ -72,9 +72,12 @@
         for(var i = 0; i < lists.length; i++){
             if(regexp.test(lists[i].className)){
                 dnd(lists[i]);
+            }else{
+                lists[i].ondragenter = function(){
+                    alert('Esta lista não pode ser arrastada nem receber itens');
+                }
             }
         }
-        
 
         function dnd(lists){
             const originalClass = lists.className;
@@ -83,22 +86,28 @@
             for(var i = 0; i< items.length; i++){
                items[i].draggable = true;
             }
-            //console.log(lists)
 
             itemArrastado = undefined;
             lists.ondragstart = function(e){
                 itemArrastado = e.target;
-                
+                var text = itemArrastado.innerText || itemArrastado.innerHTML;
+                var dt = e.dataTransfer;
+                dt.setData('Text', text);
+                dt.effectAllowed = 'copyMove';
             }
-
+            
             lists.ondragenter = function(e){
                 var relatedTarget = e.relatedTarget;
                 var target = e.target
                 target.classList.add("arquivoEntrou");
-
+                
             }
-            lists.ondragover = function(){return false};
+            lists.ondragover = function(){
+                
 
+                return false;
+            };
+            
             lists.ondragleave = function(e){
                 var relatedTarget = e.relatedTarget;
                 var target = e.target;
@@ -107,8 +116,25 @@
             lists.ondrop = function(e){
                 var relatedTarget = e.relatedTarget;
                 var target = e.target;
+                
+                var dt = e.dataTransfer;
+                var text = dt.getData('text');
 
-                console.log(itemArrastado)
+                if(text){
+                    var li = document.createElement('li');
+                    var txtLi = document.createTextNode(text);
+                    li.appendChild(txtLi);
+                    lists.appendChild(li);  
+                    
+                    li.draggable = true;
+                }
+            }
+            lists.ondragend = function(e){
+                var target = e.target || src.element;
+                var dt = e.dataTransfer;
+                if(dt.dropEffect == 'move'){
+                    target.parentNode.removeChild(target);
+                }
             }
         }
     </script>
