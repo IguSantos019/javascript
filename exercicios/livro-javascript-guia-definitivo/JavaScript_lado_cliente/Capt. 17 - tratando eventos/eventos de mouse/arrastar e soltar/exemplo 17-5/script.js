@@ -4,11 +4,15 @@
     for(var i = 0; i < lists.length; i++){
         if(regexp.test(lists[i].className)) dnd(lists[i]);
     }
-
+    
     function dnd(list){
         var originalClass = list.className;
         var entered = 0;
-
+        var items = list.getElementsByTagName('li');
+        for(var i = 0; i < items.length; i++){
+            items[i].draggable = true;
+        }
+        
         list.ondragenter = function(e){
             e = e || window.event;
             var from = e.relatedTarget;
@@ -62,10 +66,6 @@
                 entered = 0;
                 return false;
             }
-        }
-        var items = list.getElementsByTagName('li');
-        for(var i = 0; i < items.length; i++){
-            items[i].draggable = true;
         }
 
         list.ondragstart = function(e){

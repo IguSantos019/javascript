@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 04</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 500px;
+        }
+        .listaContainer{
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-left: 140px;
+            padding: 25px;
+        }
+        .lista{
+            padding: 10px;
+            border: 2px dashed grey;
+            list-style-type: none;
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+            width: 200px;
+            height: 200px;
+        }
+        li{
+            cursor: pointer;
+            background-color: #fff;
+            padding: 5px;
+            width: 100px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.164);
+            
+        }
+        .arquivoEntrou{
+            border: 2px dashed green;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="listaContainer">
+            <ul class="lista dnd" >
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <ul class="lista dnd">
+                <li>Item 4</li>
+                <li>Item 5</li>
+                <li>Item 6</li>
+            </ul>
+            <ul class="lista dnd" >
+                <li>Item 7</li>
+                <li>Item 8</li>
+                <li>Item 9</li>
+            </ul>
+            <ul class="lista" >
+                <li>Item 7</li>
+                <li>Item 8</li>
+                <li>Item 9</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const regexp = /\bdnd\b/;
+        var lists = document.querySelectorAll("ul");
+        for(var i = 0; i < lists.length; i++){
+            if(regexp.test(lists[i].className)){
+                dnd(lists[i]);
+            }
+        }
+        
+
+        function dnd(lists){
+            const originalClass = lists.className;
+
+            var items = lists.getElementsByTagName("li"); 
+            for(var i = 0; i< items.length; i++){
+               items[i].draggable = true;
+            }
+            //console.log(lists)
+
+            itemArrastado = undefined;
+            lists.ondragstart = function(e){
+                itemArrastado = e.target;
+                
+            }
+
+            lists.ondragenter = function(e){
+                var relatedTarget = e.relatedTarget;
+                var target = e.target
+                target.classList.add("arquivoEntrou");
+
+            }
+            lists.ondragover = function(){return false};
+
+            lists.ondragleave = function(e){
+                var relatedTarget = e.relatedTarget;
+                var target = e.target;
+                target.classList.remove("arquivoEntrou");                
+            }
+            lists.ondrop = function(e){
+                var relatedTarget = e.relatedTarget;
+                var target = e.target;
+
+                console.log(itemArrastado)
+            }
+        }
+    </script>
+</body>
+</html>
