@@ -81,24 +81,13 @@
             item.innerHTML += item.clientHeight ;
             e = e || window.event;
 
-            item.ondragstart = function(e){
-                
-            }
-
-            item.addEventListener('dragover', function(e){
-                item.classList.add("dragging")
-                console.log(e.clientY)
-            })
             item.ondragend = ()=>{
                 item.classList.remove("dragging")
 
             }
-
-            document.addEventListener("mousemove", e => {
-                //console.log(e.clientY)
-            })
-
         })
+
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo 08</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        .droparea{
+            border: 3px dashed grey;
+            padding: 10px;
+            width: 400px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;   
+            border-radius: 30px;
+        }
+        p{
+            position: relative;
+            top: 20px;
+            left: 0;
+            font-size: 1.4em;
+        }
+        i{
+            width: 70px;
+            height: 70px;
+            font-size: 3.6em;
+            position: relative;
+            left: 0;
+            top: 20px;
+        }
+        .green-border{
+            border-color: green;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div class="droparea">
+        <div><i class="fa-solid fa-file"></i></div>
+        <div class="prgf">
+            <p>Despeje sua imagem aqui</p>
+        </div>
+    </div>
+
+    <script>
+       const initApp = () => {
+        const droparea = document.querySelector(".droparea");
+        const prevents = (e) => e.preventDefault();
+        const active = () => droparea.classList.add('green-border') ;
+        const inactive = () => droparea.classList.remove('green-border') ;
+
+        const evtDragEnter = ['dragenter', 'dragover', 'dragleave','drop' ]
+        evtDragEnter.forEach(evtName => {
+            droparea.addEventListener(evtName, prevents)
+        });
+
+        ['dragenter', 'dragover'].forEach(evtName => {
+            droparea.addEventListener(evtName, active);
+        })
+        
+        const evtDragLeave = ['dragleave', 'drop'];
+        evtDragLeave.forEach(evtName => {
+            droparea.addEventListener(evtName, inactive);
+        })
+
+        droparea.addEventListener('drop', handleDrop);
+       
+
+
+       }
+       document.addEventListener('DOMContentLoaded', initApp);
+
+       const handleDrop = e => {
+            const dt = e.dataTransfer;
+            const file = dt.files;
+            const filesArray = [...file];
+
+            for(var i = 0; i < filesArray.length; i++){
+                if(filesArray[i].type.startsWith("image/")){
+                    console.log(filesArray[i].type);
+                    // alert("imagem");
+                    const objectURL = URL.createObjectURL(file[i]);
+                    console.log(objectURL);
+                    var img = document.createElement('img');
+                    img.src = objectURL;
+                    img.style.display = 'block';
+                    img.height = 300;
+                    img.width = 300;
+                    img.style.marginTop = '50px';
+
+                    document.querySelector('.droparea').appendChild(img);
+                }
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

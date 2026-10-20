@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        .container{
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        const box1 = document.querySelector(".box")
+
+        const box2 = document.createElement('p');
+        const txt = document.createTextNode('Olá me chamo Igor');
+        box2.appendChild(txt);
+        box1.insertAdjacentElement('afterend', box2);
+        
+        const box3 = document.createElement('div');
+        box3.classList.add('box');
+        box3.innerText = 'Olá sou o Igor'
+        box2.insertAdjacentElement('afterend', box3)
+        
+    </script>
+</body>
+</html>
