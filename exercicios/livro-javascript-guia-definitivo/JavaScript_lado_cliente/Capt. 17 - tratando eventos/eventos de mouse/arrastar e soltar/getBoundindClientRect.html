@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(56, 56, 241);
+            border-radius: 20px;
+            margin-bottom: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.3em;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">dasdsa</div>
+    <div class="box" id="box2"></div>
+
+
+    <script>
+        const boxes = document.querySelectorAll(".box");
+        const box2 = document.getElementById("box2")
+        boxes.forEach(box => {
+            var boxPosY = box.getBoundingClientRect();
+            box2.innerHTML = boxPosY.y + ` Altura em relação a pagina`
+        })
+
+    </script>
+</body>
+</html>
