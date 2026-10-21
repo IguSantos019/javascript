@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 09</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .droparea{
+            width: 400px;
+            height: 200px;
+            border: 3px dashed grey;
+            padding: 15px;
+            font-size: 1.6em;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        i{
+            font-size: 2em;
+            position: relative;
+            top: -15px;
+        }
+        p{
+            position: relative;
+            top: 30px;
+        }
+        .green-border{
+            border-color: green;
+        }
+        .showVideos{
+            display: flex;
+            video{
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="droparea">
+            <i class="fa-solid fa-file-video"></i>
+            <p>Despeje seu video aqui</p>
+        </div>
+        <div class="showVideos">
+        </div>
+    </div>
+    <script>
+        const initApp = () => {
+            const droparea = document.querySelector(".droparea");
+
+            const prevents = e => e.preventDefault();
+
+
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(evtName => {
+                droparea.addEventListener(evtName, prevents);
+            })
+
+            const active = () => droparea.classList.add('green-border');
+            ['dragenter', 'dragover'].forEach(evtName => {
+                droparea.addEventListener(evtName, active);
+            })
+            const inactive = () => droparea.classList.remove('green-border');
+            ["dragleave", 'drop'].forEach(evtName => {
+                droparea.addEventListener(evtName, inactive);
+            })
+
+
+            droparea.addEventListener('drop', handleDrop);
+
+
+        }
+
+        const handleDrop = e => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            const showVideos = document.querySelector('.showVideos');
+
+            for(var i = 0; i < files.length; i++){
+                if(files[i] && files[i].type.startsWith('image/')){
+                    alert('Despeje apenas video!')
+                }else if(files[i] && files[i].type.startsWith('video/')){
+                    console.log('Video OK!');
+                    console.log(files[i]);
+                    
+                    const ULRVideo = URL.createObjectURL(files[i]);
+                    
+                    const video = document.createElement('video');
+                    video.src = ULRVideo;
+                    video.controls = 'true';
+                    showVideos.appendChild(video);
+
+                    
+
+                }else{
+                    alert('Tipo de arquivo não permitido!');
+                }
+            }
+
+
+        }
+
+
+        document.addEventListener('DOMContentLoaded', initApp);
+
+
+        
+
+    </script>
+</body>
+</html>
