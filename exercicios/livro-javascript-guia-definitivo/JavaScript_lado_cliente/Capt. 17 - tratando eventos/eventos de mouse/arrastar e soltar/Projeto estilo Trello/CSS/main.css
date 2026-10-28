@@ -78,18 +78,43 @@ hr{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    height: 100%;
 }
 
 .card{
     background-color: #fff;
     width: 100%;
-    padding: 10px;
     border-radius: 10px;
     min-height: 60px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.186);
     cursor: pointer;
+    display: flex;
+    
+    
+    
 }
+.textCard{
+    width: 80%;
+    text-indent: 5px;
+}
+.add{
+    font-size: 1.4em;
+    position: relative;
+    color: grey;
+    background-color: rgba(230, 229, 229, 0.701);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    transition: all .2s;
+    
+    i:hover{
+        transform: scale(1.1);
+    }
+}
+
 .dropActive{
     transform: scale(1.004);
-    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.353);
+    background-color: #ebe9e987;
 }
