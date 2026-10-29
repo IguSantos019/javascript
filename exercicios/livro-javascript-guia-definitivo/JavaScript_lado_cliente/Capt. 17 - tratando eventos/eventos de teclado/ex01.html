@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keydown e keyup</title>
+    <style>
+        body{
+        }
+        .container{
+            width: 200px;
+            height: 100px;
+            background-color: #fff;
+            border: 2px solid grey;
+            margin: auto;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .text{
+            text-align: center;
+            font-size: 1.3em;
+        }
+        .evtKey{
+            font-size: 1.1em;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="text">Pressione alguma tecla </div>
+        <div class="evtKey"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
+        function init(){
+            const evtKey = document.querySelector('.evtKey');
+
+            const handleDown = (e) => {
+                evtKey.textContent += e.key;
+                
+            }
+            const handleUp = e => {
+                console.log(e.key);
+
+            }
+            document.addEventListener('keydown', handleDown);
+            document.addEventListener('keyup', handleUp);
+        }
+    </script>
+
+</body>
+</html>

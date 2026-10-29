@@ -13,6 +13,7 @@
 body{
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 .tittle-addMoreTasks, .container{
     display: flex;
@@ -93,28 +94,23 @@ hr{
     
     
 }
-.textCard{
-    width: 80%;
-    text-indent: 5px;
-}
-.add{
-    font-size: 1.4em;
-    position: relative;
-    color: grey;
-    background-color: rgba(230, 229, 229, 0.701);
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-    transition: all .2s;
-    
-    i:hover{
-        transform: scale(1.1);
-    }
-}
 
 .dropActive{
     transform: scale(1.004);
     background-color: #ebe9e987;
+}
+
+.createNewCard{
+    width: 500px;
+    height: 300px;
+    border: 2px solid rgba(0, 0, 0, 0.344);
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    label{
+        
+    }
 }

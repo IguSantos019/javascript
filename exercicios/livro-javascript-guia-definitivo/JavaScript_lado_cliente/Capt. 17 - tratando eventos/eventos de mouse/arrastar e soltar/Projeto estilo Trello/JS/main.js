@@ -51,38 +51,23 @@ const initApp = () => {
             dt.effectAllowed = 'move';
         };
 
-        function createCard(){
-                var card = document.createElement('div');
-                    card.classList.add('card');
-    
-                    var textCard = document.createElement('div');
-                    textCard.classList.add('textCard');
-                    textCard.appendChild(document.createTextNode(text));
-                    card.appendChild(textCard);
-    
-                    const add = document.createElement('div');
-                    add.classList.add('add');
-                    const i = document.createElement('i');
-                    i.classList.add('fa-solid');
-                    i.classList.add('fa-plus');
-                    add.appendChild(i);
-    
-                    card.appendChild(add);
-                    target.appendChild(card);                
-                    card.draggable = true;
-                    
-                    textCard.addEventListener('click', function(){
-                        card.contentEditable = true;
-                    })
-            }
-
         const handleDrop = (e) => {
             const dt = e.dataTransfer;
             const target = e.target;
             var text = dt.getData('text');
 
             if(text){
-                createCard();
+                var card = document.createElement('div');
+                card.classList.add('card');
+                card.appendChild(document.createTextNode(text));
+                
+                target.appendChild(card);                
+
+                card.draggable = true;
+                textCard.addEventListener('click', function(){
+                    card.contentEditable = true;
+                })
+
             }
             
             
@@ -99,7 +84,7 @@ const initApp = () => {
             const dt = e.dataTransfer;
             const target = e.target;
             if(dt.dropEffect == 'move'){
-                target.remove(target);
+                target.parentNode.removeChild(target);
             }
 
         }
