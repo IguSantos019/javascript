@@ -18,6 +18,16 @@
             flex-direction: column;
             gap: 5px;
         }
+        .btns{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 7px;
+        }
+        button{
+            padding: 10px;
+        }
         .text{
             text-align: center;
             font-size: 1.3em;
@@ -34,22 +44,54 @@
         <div class="text">Pressione alguma tecla </div>
         <div class="evtKey"></div>
     </div>
+    <div class="btns">
+        <button>keydown</button>
+        <button>keyup</button>
+        <button>keypress</button>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', init);
         function init(){
-            const evtKey = document.querySelector('.evtKey');
+            const evtKey = document.querySelector('.evtKey');            
+            const btns = document.querySelectorAll('button');
 
-            const handleDown = (e) => {
-                evtKey.textContent += e.key;
+            const handleEvent = (e) => {
+                var key = e.key;
+                evtKey.textContent = key;
+            }
+            btns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    var evtName = e.target.textContent;
+                    document.addEventListener(evtName, handleEvent);
+                    
+
+                })
+
+            })
+
+            // // const handleDown = (e) => {
+            // //     // evtKey.textContent += e.key;
                 
-            }
-            const handleUp = e => {
-                console.log(e.key);
+            // // }
+            // // const handleUp = e => {
+            // //     console.log(e.key);
+            // //     var key = e.key;
+            // //     evtKey.textContent = key;
+            // // }
+            
+            // // const handlePress = (e) => {
+            // //     var key = e.key;
+                
+            // //     // evtKey.textContent = key;
+                
 
-            }
-            document.addEventListener('keydown', handleDown);
-            document.addEventListener('keyup', handleUp);
+            // // }
+
+            // document.addEventListener('keydown', handleDown);
+            // document.addEventListener('keyup', handleUp);
+            // document.addEventListener('keypress', handlePress);
+
         }
     </script>
 
